@@ -60,15 +60,20 @@ Are you a sports fan? Do you like watching online tournaments? Even if not, trus
 
 [Back to top](#contents) ⤴
 
-## 🔊 6. Subscribe and watch others that are on similar level.
+## 🔊 6. Subscribe and watch others that are on the similar level.
 
-👉 For this I recommend following my #CyberEthical contents on [Instagram](https://www.instagram.com/cyber.ethical.me/) and on [LinkedIn](https://www.linkedin.com/in/kamilpacanek/detail/recent-activity/shares/). Add your mail to the mailing list on this site - you will be notified only on a new content on my blog.
+For this, I recommend following my #CyberEthical contents on [Instagram](https://www.instagram.com/cyber.ethical.me/) and on [LinkedIn](https://www.linkedin.com/in/kamilpacanek/detail/recent-activity/shares/). Add your mail to the mailing list on this site - you will be notified only on a new content on my blog.
 
-> When browsing my site, check especially this article: 👉 [My Hacking Lab](/my-hacking-lab)
+Have a look at these: 
+
+👉 [My Hacking Lab - My setup, tools and a bunch of tips](/my-hacking-lab)
+
+👉 [HTB Starting Point - Detailed write-up series](/series/htb-starting-point)
 
 And, because the best way to learn is to get engaged with others - I recommend you to [join the Hashnode](/join) yourself and share with others as you learn.
 
 > By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
+
 
 [Back to top](#contents) ⤴
 
@@ -90,8 +95,11 @@ As for setting the goals, a recently OSCP certified [Prateek Srivastava](https:/
 
 ## 📑 Changelog
 
+#### 2021/06/27
+* Linked [HTB Starting Point write-up series](/series/htb-starting-point)
+
 #### 2021/06/08
-* added David Bombal and Neal Bridges discussions
+* Added David Bombal and Neal Bridges discussions
 
 [Back to top](#contents) ⤴
 
