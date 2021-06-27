@@ -613,3 +613,5 @@ After:
 * [Hacktricks - Privilege Escalation Abusing Tokens](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/privilege-escalation-abusing-tokens)
 * [What is mimikatz](https://www.varonis.com/blog/what-is-mimikatz/)
 * [Mimikatz and Active Directory Kerberos Attacks](https://adsecurity.org/?p=556)
+
+#### Check other write-ups from the Starting Point path - links below the article, or navigate directly to the series [here](/series/htb-starting-point).
