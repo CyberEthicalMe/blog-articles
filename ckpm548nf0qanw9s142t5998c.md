@@ -89,7 +89,7 @@ As for setting the goals, a recently OSCP certified [Prateek Srivastava](https:/
 * [OSCP: My journey from Blue Team to Red Team](https://theblackalbum.medium.com/oscp-my-journey-from-blue-team-to-red-team-a4ca8c3fb11a)
 * [PWK: My Journey and Review](https://theblackalbum.medium.com/pwk-my-journey-and-review-c2e3253f029f)
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
 ### And what do **you** think about it? Would you add something to the list? Please share your experience in the comments 👇!
 
