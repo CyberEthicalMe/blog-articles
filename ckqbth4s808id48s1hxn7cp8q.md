@@ -106,7 +106,7 @@ The above JavaScript uses the fact that the only `h1` tags available on the `Pre
 
 # Wrapping up
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring on the [Sponsor](/sponsor) button or [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
 Now copy the output of the script from the console and paste it, preferably, somewhere at the top of the article.
 
