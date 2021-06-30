@@ -31,7 +31,7 @@ This box features only a root flag. Don't waste your time on finding the `user.t
 |Author  | **Asentinn** / OkabeRintaro
 |       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[bmac-button]
+%%[patreon-btn]
 
 # Target of Evaluation
 
@@ -205,7 +205,7 @@ $ zip pshield_plugin.zip *
 
 # Exploiting (low privilege shell access)
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
 After uploading the plugin and activating it, each time I want to get the PS reverse shell I start `netcat` listener and navigate to the following URL:
 
