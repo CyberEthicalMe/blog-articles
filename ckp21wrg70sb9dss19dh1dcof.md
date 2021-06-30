@@ -2,7 +2,7 @@
 
 *Here is my way of learning ethical hacking and cybersecurity; this list is not at all comprehensive. I will be coming back to this article and update its content. Please let me know in the comments below if you found something new or if I can improve/add something to my repertoire.*
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
 %%[patreon-btn]
 
