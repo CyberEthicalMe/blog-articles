@@ -77,6 +77,8 @@ Events I was participated and other worthy mentions.
 * 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
 * 👉 Spiceworks Community: [Asentinn](https://community.spiceworks.com/people/asentinn)
 
+%%[patreon-btn]
+
 [_Back to top_](#contents) ⤴
 
 # 🎓 Learning
