@@ -30,7 +30,7 @@ This box features debugging session and MySQL enumeration.
 |Author  | **Asentinn** / OkabeRintaro
 |       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[bmac-button]
+%%[patreon-btn]
 
 # Target of Evaluation
 
@@ -291,7 +291,7 @@ But let's assume we don't know where the flag lays.
 
 # Escalating Privileges
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring on the [Sponsor](/sponsor) button or [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
 In the debugging sessions, we see that `cat` is not referenced via an absolute `/bin/cat` path. We can exploit that.
 The plan is to modify `PATH` variable to include directory, so it will be searched **before** `/bin/`. In this directory, we are going to create `cat` file that will call `/bin/bash`. As we've observed before, `cat` (whatever it may be) is run with temporary elevated privileges - that way we can get the root shell.
@@ -318,11 +318,11 @@ Remember that because we have modified `cat` in a `PATH` we should, either unset
 
 # Post-exploitation
 
-When you read the reports in the `/root/reports` you will see a lot references to the `filezilla` and its config. It happen that `.config` directory actually exists in the `/root`
+When you read the reports in the `/root/reports` you will see many references to the `filezilla` and its config. It happens that `.config` directory actually exists in the `/root`
 
 ![817353914711.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1624365239164/y83wv9QVX.png)
 
-Allright - another credentials to save.
+Alright - another credential to save.
 
 ```
 echo 'ftpuser|mc@F1l3ZilL4' | tee -a ../.credentials
