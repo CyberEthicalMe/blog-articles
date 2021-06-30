@@ -41,9 +41,9 @@ hello-world            latest    d1165f221234   2 months ago   13.3kB
 vulnerables/web-dvwa   latest    ab0d83586b6e   2 years ago    712MB
 ```
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](https://blog.cyberethical.me/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
-%%[bmac-button]
+%%[patreon-btn]
 
 # Running
 
