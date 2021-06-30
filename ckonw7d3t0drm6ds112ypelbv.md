@@ -32,7 +32,7 @@ cURL As A Service or CAAS is a brand new Alien application, built so that humans
 |Author  | **Asentinn** / OkabeRintaro
 |       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[bmac-button]
+%%[patreon-btn]
 
 # Target of Evaluation 
 
@@ -277,7 +277,7 @@ Ok, so we have a vulnerability we're going to exploit.
 
 # Exploit
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](https://blog.cyberethical.me/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
 Now, `curl` have one parameter, that existence is not that obvious for a command that almost always is used to make a request under given address.
 
