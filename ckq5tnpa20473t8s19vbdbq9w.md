@@ -28,7 +28,7 @@ This is a Windows box where you can learn how enumeration can lead to RCE via SQ
 |Author  | **Asentinn** / OkabeRintaro
 |       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[bmac-button]
+%%[patreon-btn]
 
 # Target of Evaluation
 
@@ -249,7 +249,7 @@ And as I was expecting from the time of it took - this is not what we had to do.
 
 # Exploitation (user shell)
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
 With that in the hands, we could try to get the reverse shell.
 
