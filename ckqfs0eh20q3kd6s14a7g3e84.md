@@ -291,7 +291,7 @@ But let's assume we don't know where the flag lays.
 
 # Escalating Privileges
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
 In the debugging sessions, we see that `cat` is not referenced via an absolute `/bin/cat` path. We can exploit that.
 The plan is to modify `PATH` variable to include directory, so it will be searched **before** `/bin/`. In this directory, we are going to create `cat` file that will call `/bin/bash`. As we've observed before, `cat` (whatever it may be) is run with temporary elevated privileges - that way we can get the root shell.
