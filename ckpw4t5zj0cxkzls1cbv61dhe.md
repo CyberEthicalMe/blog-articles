@@ -205,7 +205,7 @@ $ zip pshield_plugin.zip *
 
 # Exploiting (low privilege shell access)
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
 After uploading the plugin and activating it, each time I want to get the PS reverse shell I start `netcat` listener and navigate to the following URL:
 
