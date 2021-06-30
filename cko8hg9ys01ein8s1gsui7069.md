@@ -61,7 +61,7 @@ Unfortunately, it just leaves a lot of new lines (or maybe my parameters are wro
 
 # Parsing the packet file
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
 With the great support of the AliBawazeEer's writeup from Kaizen CTF 2018 (check _Additional readings_ section) we know what to do. I'm also using the script provided by the AliBawazeEer to map the hex codes to actual key inputs.
 
