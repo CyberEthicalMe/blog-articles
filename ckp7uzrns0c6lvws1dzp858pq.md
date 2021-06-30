@@ -216,7 +216,7 @@ $ nikto -o nikto.txt -h 10.10.124.36
 
 Nikto found a `/login.php` page.
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
 I was curious why `nikto` found `login.php` and `gobuster` didn't. Well, apparently `gobuster dir` have an additional parameter that can be used to enumerate files.
 
