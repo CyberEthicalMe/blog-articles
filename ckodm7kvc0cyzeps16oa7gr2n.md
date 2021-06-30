@@ -31,7 +31,7 @@ Inspector Gadget was known for having a multitude of tools available for every o
 |Author	| **Asentinn** / OkabeRintaro
 |		| [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[bmac-button]
+%%[patreon-btn]
 
 # Target of Evaluation 
 
@@ -146,7 +146,7 @@ Given port is a TCP open port for which `nmap` could not determine OS version al
 
 ## Website
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - if you would like to boost the community, consider one-time sponsoring at the 🍻 [Buymeacoffee](https://www.buymeacoffee.com/asentinn) or use the [Sponsor](https://blog.cyberethical.me/sponsor) button.
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/bePatron?u=57522747) which also gives you some bonus perks.
 
 Let's try to open this in browser as GET gives some HTML code.
 
