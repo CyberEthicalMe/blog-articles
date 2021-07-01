@@ -22,3 +22,4 @@
 |HTB Starting Point: Archetype|[Markdown](ckq5tnpa20473t8s19vbdbq9w.md) | [Blog](https://blog.cyberethical.me/htb-starting-point-archetype)
 |My first hackathon - Hack4Lem 2021|[Markdown](ckq6xn5td03qwi5s13vd064fl.md) | [Blog](https://blog.cyberethical.me/hack4lem-2021)
 |Generate Table of Contents with a single click|[Markdown](ckqbth4s808id48s1hxn7cp8q.md) | [Blog](https://blog.cyberethical.me/single-click-toc)
+|Why did I create a Patreon account?|[Markdown](ckqk23s38079595s1aafw5y37.md) | [Blog](https://blog.cyberethical.me/why-patreon)
