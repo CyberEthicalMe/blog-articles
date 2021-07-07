@@ -2,6 +2,8 @@
 
 Recently, I was able to advise a few people on how they can start to learn cybersecurity through offensive security and pentesting. I realized that instead of repeating myself I can write that down in an article, so it can be shared with anyone interested in expanding their itsec skills. I'll keep this article updated.
 
+%%[patreon-btn]
+
 ***
 # Contents
 
@@ -31,7 +33,17 @@ Fortunately, any of the courses I spotlight here starts with ethical hacking con
 
 ## 🔧 2. Hand-on experience, AKA *keep your hands dirty*.
 
-✔ For a starter take the free courses on TryHackMe and HackTheBox Academy - both are the first places I would learn from. THM have [Complete Beginner Path](https://tryhackme.com/path-action/beginner/join) and HTB Academy starts with [Introduction Module](https://academy.hackthebox.eu/module/15). I haven't completed all available modules yet, but I feel like I know so much more and have that knowledge structuralized.
+✔ For a starter, take the _free_ courses on TryHackMe and HackTheBox Academy - both are the first places I would learn from. THM have **Complete Beginner Path** and HTB Academy starts with **Introduction Module**. I haven't completed all available modules yet, but I feel like I know so much more and have that knowledge structuralized.
+
+👉 [THM Complete Beginner Path](https://tryhackme.com/path-action/beginner/join)
+
+👉 [HTB Academy Introduction Module](https://academy.hackthebox.eu/module/15)
+
+On July 2021 TryHackMe released a **Pre Security Learning Path**. It's a good way to start, but remember that on THM you almost always need a subscription to complete whole modules - for free are the first couple of rooms from a module. 
+
+👉 [THM Pre Security Learning Path](https://tryhackme.com/path/outline/presecurity)
+
+👉 [Pre Security Learning Path Review](https://blog.cyberethical.me/review-pre-security)
 
 ## 💡 3. When hands are tired - watch meaty online courses.
 
@@ -41,6 +53,10 @@ Fortunately, any of the courses I spotlight here starts with ethical hacking con
 ✔ Sometimes you can also acquire the 3 months of LinkedIn Learning access - for example, I found mine voucher on the Visual Studio Subscription associated with my company account. From this site I recommend both [Learning Kali Linux](https://www.linkedin.com/learning/learning-kali-linux-2) and [Become an Ethical Hacker](https://www.linkedin.com/learning/paths/become-an-ethical-hacker).
 
 All these materials are the top-notch theoretical ones in my opinion.
+
+If you can spend a few bucks (or wait for the occasional discounts) this is a well put course on OWASP Top10 made by [The XSS Rat](https://twitter.com/theXSSrat).
+
+👉  [The OWASP top 10 demystified by XSS Rat](https://www.udemy.com/course/the-owasp-top-10-demystified/)
 
 [Back to top](#contents) ⤴
 
@@ -94,6 +110,10 @@ As for setting the goals, a recently OSCP certified [Prateek Srivastava](https:/
 ### And what do **you** think about it? Would you add something to the list? Please share your experience in the comments 👇!
 
 ## 📑 Changelog
+
+#### 2021/07/07
+* Added THM Pre Security Learning Path
+* Added The OWASP top 10 demystified by The XSS Rat
 
 #### 2021/06/27
 * Linked [HTB Starting Point write-up series](/series/htb-starting-point)
