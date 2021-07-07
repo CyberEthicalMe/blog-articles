@@ -52,6 +52,13 @@ Events I was participated and other worthy mentions.
 
 * [LinkedIn](https://www.linkedin.com/posts/kamilpacanek_winners-of-may-coffee-giveaway-activity-6807199444920999936-4-Z1)
 
+## SecuRing CTF: Różdżka Chaosu (Wand of Chaos)
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625669871532/b8_Z3vB8Q.png)
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625670013878/YcUHsyVa6.png)
+* 👉 [Award-winning write-up: Most interesting write-up](https://blog.cyberethical.me/securing-ctf-rozdzka)
+
 > Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
 
 >✔ Automatic GitHub Backup
