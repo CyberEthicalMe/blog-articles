@@ -204,4 +204,4 @@ This is a perfect example how countermeasures was so troublesome and counterprod
 
 > 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
 
-**This is a part of Infosecurity Europe 2021 series. Follow the links below to read about other days.**
+**This is a part of [Infosecurity Europe 2021](/infosecurity-europe-2021) series. Follow the links below to read about other days.**
