@@ -15,16 +15,16 @@ Please, find my notes below.
 ***
 # Contents
 1. [Introduction](#introduction)
-* [Discussing the Rising Nation-State Cyber Activity and its Impacts by Robert Hannigan](#discussing-the-rising-nation-state-cyber-activity-and-its-impacts-by-robert-hannigan)
-* [Solving The Cyber Skills Gap by Dr. Andrea Cullen, Lorna Armitage](#solving-the-cyber-skills-gap-by-dr-andrea-cullen-lorna-armitage)
-* [Digital Empathy: Building a People First Approach to Cybersecurity by Sian John](#digital-empathy-building-a-people-first-approach-to-cybersecurity-by-sian-john)
-* [Top Use Cases For Automated Penetration Testing by Eric Graves, Shakel Ahmed](#top-use-cases-for-automated-penetration-testing-by-eric-graves-shakel-ahmed)
-* [Minimizing End-User Disruption During Incident Response on MacOS by Mark Walker](#minimizing-end-user-disruption-during-incident-response-on-macos-by-mark-walker)
-* [A How to Guide for Cybersecurity Pros: Navigating the Top Trends in Third-Party Risk Management) by Chris Paterson](#a-how-to-guide-for-cybersecurity-pros-navigating-the-top-trends-in-third-party-risk-management-by-chris-paterson)
-* [Now That Ransomware Has Gone Nuclear, How Can You Avoid Becoming the Next Victim? by Javvad Malik](#now-that-ransomware-has-gone-nuclear-how-can-you-avoid-becoming-the-next-victim-by-javvad-malik)
-* [5 Steps to Zero Trust by Tom Rossdale](#5-steps-to-zero-trust-by-tom-rossdale)
-* [Disrupting the Cybersecurity Kill Chain by Detecting Domain Reconnaissance by Harish Sekar](#disrupting-the-cybersecurity-kill-chain-by-detecting-domain-reconnaissance-by-harish-sekar)
-* [The Life and Times of Open Source Libraries by Fulya Sengil](#the-life-and-times-of-open-source-libraries-by-fulya-sengil)
+* [_Discussing the Rising Nation-State Cyber Activity and its Impacts_ by Robert Hannigan](#discussing-the-rising-nation-state-cyber-activity-and-its-impacts-by-robert-hannigan)
+* [_Solving The Cyber Skills Gap_ by Dr. Andrea Cullen, Lorna Armitage](#solving-the-cyber-skills-gap-by-dr-andrea-cullen-lorna-armitage)
+* [_Digital Empathy: Building a People First Approach to Cybersecurity_ by Sian John](#digital-empathy-building-a-people-first-approach-to-cybersecurity-by-sian-john)
+* [_Top Use Cases For Automated Penetration Testing_ by Eric Graves, Shakel Ahmed](#top-use-cases-for-automated-penetration-testing-by-eric-graves-shakel-ahmed)
+* [_Minimizing End-User Disruption During Incident Response on MacOS_ by Mark Walker](#minimizing-end-user-disruption-during-incident-response-on-macos-by-mark-walker)
+* [_A How to Guide for Cybersecurity Pros: Navigating the Top Trends in Third-Party Risk Management_ by Chris Paterson](#a-how-to-guide-for-cybersecurity-pros-navigating-the-top-trends-in-third-party-risk-management-by-chris-paterson)
+* [_Now That Ransomware Has Gone Nuclear, How Can You Avoid Becoming the Next Victim?_ by Javvad Malik](#now-that-ransomware-has-gone-nuclear-how-can-you-avoid-becoming-the-next-victim-by-javvad-malik)
+* [_5 Steps to Zero Trust_ by Tom Rossdale](#5-steps-to-zero-trust-by-tom-rossdale)
+* [_Disrupting the Cybersecurity Kill Chain by Detecting Domain Reconnaissance_ by Harish Sekar](#disrupting-the-cybersecurity-kill-chain-by-detecting-domain-reconnaissance-by-harish-sekar)
+* [_The Life and Times of Open Source Libraries_ by Fulya Sengil](#the-life-and-times-of-open-source-libraries-by-fulya-sengil)
 * [Additional readings](#additional-readings)
 ***
 
@@ -98,7 +98,7 @@ This is a perfect example how countermeasures was so troublesome and counterprod
 * we should not be perceived as a threat or enemy - currently users are afraid of reporting incidents
 * focus on end users
 
-# _A How to Guide for Cybersecurity Pros: Navigating the Top Trends in Third-Party Risk Management)_ by Chris Paterson
+# _A How to Guide for Cybersecurity Pros: Navigating the Top Trends in Third-Party Risk Management_ by Chris Paterson
 
 * challenges of 3rd Party Risk Management
  * Reliance on others
