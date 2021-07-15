@@ -16,6 +16,7 @@
 6. [Content Creation 📣](#content-creation)
 7. [Time Tracking ⏰](#time-tracking)
 8. [Set Your Goal 🏁](#set-your-goal)
+9. [Changelog](#changelog)
 ***
 
 # Setup Overview 🔌
@@ -116,6 +117,8 @@ Obligatory to find out open ports and check for running services on the network.
 
 CLI version of a DirBuster, incredibly useful to enumerate directories and files on the website.
 
+> Since I've learned the `ffuf` possibilities (after completing the HTB Academy [Attacking Web Applications with Ffuf](https://academy.hackthebox.eu/module/54) module) it is replacing `gobuster` in my toolkit
+
 ### nikto
 
 More advanced website scanner, apart from directory enumeration it also performs vulnerability checks.
@@ -125,6 +128,8 @@ More advanced website scanner, apart from directory enumeration it also performs
 ![burpsuite.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1621780151475/uGsx0upo9.png)
 
 Time spent with this tool is not a wasted time because you will use it through all your _mastery levels_. Numerous possibilities that come from intercepting and modifying the requests and responses between host and website.
+
+> Now I'm learning to use `mitmproxy`
 
 ### netcat
 
@@ -284,5 +289,9 @@ I think I'm right on track :).
 
 > By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
 
+# Changelog
+
+#### 2021/07/15
+* `ffuf` and `mitmproxy` info added
 
 
