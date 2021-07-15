@@ -8,6 +8,8 @@
 
 Please, find my notes from the second day below.
 
+> If you have missed the first day, [go here for the notes](https://blog.cyberethical.me/infosecurity-europe-2021-day-1)
+
 ***
 # Contents
 1. [Introduction](#introduction)
