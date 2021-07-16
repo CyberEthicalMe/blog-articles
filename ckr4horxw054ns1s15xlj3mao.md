@@ -78,6 +78,8 @@ Please, find my notes from the second day below.
 
 > By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
 
+[Back to top](#contents) ⤴
+
 # _Active Directory Security: Why Do We Fail and What Do Admins and Auditors Miss?_ by Sylvain Cortes
 
 * AD is more than 20 years old - we didn't care of its security and now ransomware takes advantage of it
@@ -96,6 +98,8 @@ Please, find my notes from the second day below.
 * AD security must act in real time and prevent attacks
 * first fix Windows non-patched CVE + fix AD misconfigurations
 
+[Back to top](#contents) ⤴
+
 # _Smarter Security Operations with a Hybrid SOC_ by Jaimon Thomas, Sinu Peter
 
 * challenges with traditional outsourcing models
@@ -109,6 +113,9 @@ Please, find my notes from the second day below.
 * you need right people, process and technology to do this without relinquishing control to a 3rd part provider
 
 
+[Back to top](#contents) ⤴
+
+
 # _Cloud Native Application Security: Embracing Developer-First Security for the Cloud Era_ by Guy Podjarny
 
 * everyone wants to be a [tech company](https://www.businessinsider.com/marianne-lake-says-jpmorgan-is-a-tech-company-2016-2?IR=T)
@@ -117,6 +124,9 @@ Please, find my notes from the second day below.
 * developers like developer tools; to encourage them to use secure solutions in their job, we must adapt software to their workflow
 * security audits, developers fix
 * security transformation is a must for all
+
+
+[Back to top](#contents) ⤴
 
 # _Why Ransomware Prevention Demands a Multi-layered, “Prevention First” Approach_ by Justin Vaughan-Brown, Matt Logan
 
@@ -143,6 +153,9 @@ Please, find my notes from the second day below.
  * ML: accuracy with unknown threats 50-70% with 1-2% of false positives
  * Deep Neural Networks: accuracy with unknown threats 99% with 0.1% of false positives from **raw data**
 
+
+[Back to top](#contents) ⤴
+
 # Additional readings
 
 > 📌 Follow the `#CyberEthical` hashtag on the social media
@@ -156,3 +169,6 @@ Please, find my notes from the second day below.
 > 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
 
 **This is a part of [Infosecurity Europe 2021](/series/infosecurity-europe-2021) series. Follow the links below to read about other days.**
+
+[Back to top](#contents) ⤴
+
