@@ -4,7 +4,7 @@
 We introduced "sandboxing" using Node.js vm module on our calculator feature.
 `https://discord.gg/<redacted>`
 
-> Complete write up for the `discordvm` challenge at Business CTF 2021 hosted by [Hack The Box](https://www.hackthebox.eu/htb-business-ctf-2021). This article is a part of a HTB Business CTF 2021 series. 
+> Complete write up for the `discordvm` challenge at Business CTF 2021 hosted by [Hack The Box](https://www.hackthebox.eu/htb-business-ctf-2021). This article is a part of a [HTB Business CTF 2021 series](https://blog.cyberethical.me/series/htb-business-2021). 
 
 > Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
 
