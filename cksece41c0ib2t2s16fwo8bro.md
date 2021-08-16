@@ -1,4 +1,4 @@
-## Upload Vulnerabilities
+## THM Upload Vulnerabilities
 
 # Basic Information
 
