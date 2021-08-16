@@ -50,7 +50,7 @@ $ whatweb jewel.uploadvulns.thm
 ```
 ![2021-08-08-15-39-04.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629025750745/FTOHrT8_N.png)
 
-We are dealing with the `nginx` backend. In the source of the page, there is a reference to the `upload.js` script file.
+We are dealing with the `Node.JS Express` backend. In the source of the page, there is a reference to the `upload.js` script file.
 
 ![2021-08-08-15-41-45.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629025759300/vVdq_4LIcC.png)
 
