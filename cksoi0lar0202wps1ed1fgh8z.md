@@ -176,6 +176,22 @@ After that completes, you will be asked to restart the device. Type `sudo reboot
 
 [Back to top](#contents) ⤴
 
+> Do you like what you see? Join the [Hashnode.com](https://blog.cyberethical.me/join) now and start publishing. Things that are awesome:
+
+>✔ Automatic GitHub Backup
+
+>✔ Write in Markdown
+
+>✔ Free domain mapping
+
+>✔ CDN hosted images
+
+>✔ Free built-in newsletter service
+
+>✔ Built-in blog monetizing through the Sponsor feature
+
+> By using my link, you can help me unlock the ambassador role, which cost you nothing and gives me some additional features to support my content creation mojo.
+
 # Hardening
 
 Because after installation default credentials are set to `kali/kali` it is important to either secure this account or create a new one and remove the `kali`. I would recommend the second one - for practice and for additional security.
