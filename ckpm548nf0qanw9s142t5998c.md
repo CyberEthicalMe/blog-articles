@@ -14,7 +14,8 @@ Recently, I was able to advise a few people on how they can start to learn cyber
 5. [See how the pros do it.](#5-see-how-the-pros-do-it)
 6. [ Subscribe and watch others that are on similar level.](#6-subscribe-and-watch-others-that-are-on-similar-level)
 7. [Think bigger. Set your goals and stand your ground.](#7-think-bigger-set-your-goals-and-stand-your-ground)
-8. [Changelog](#changelog)
+8. [Join forces.](#8-join-forces)
+9. [Changelog](#changelog)
 ***
 
 ## ⚠ 1. Understand what it means to hack ethically.
@@ -107,9 +108,20 @@ As for setting the goals, a recently OSCP certified [Prateek Srivastava](https:/
 
 > 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
+## 🚸 8. Join forces.
+
+Look for healthy communities that will help you with your struggles. Did you get blocked on the hacking box? Couldn't get the reverse shell, although you are doing everything correctly? We all are facing these problems and sometimes just a little nudge or sanity check from the other person is what makes you understand your mistake - or simply realize you are doing everything alright, just have to restart that server.
+
+* 👉 [Discord: CyberEthical](https://discord.com/invite/5MjU4Cxf3R)
+* 👉 [Discord: HackTheBox](https://discord.com/invite/hackthebox)
+* 👉 [Discord: TryHackMe](https://discord.com/invite/tryhackme)
+
 ### And what do **you** think about it? Would you add something to the list? Please share your experience in the comments 👇!
 
 ## 📑 Changelog
+
+#### 2021/08/25
+* Added Discord Servers links
 
 #### 2021/07/07
 * Added THM Pre Security Learning Path
