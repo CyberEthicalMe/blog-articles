@@ -12,7 +12,7 @@ Recently, I was able to advise a few people on how they can start to learn cyber
 3. [When hands are tired - watch meaty online courses.](#3-when-hands-are-tired-watch-meaty-online-courses)
 4. [Use vulnerables to practice live example scenarios.](#4-use-vulnerables-to-practice-live-example-scenarios)
 5. [See how the pros do it.](#5-see-how-the-pros-do-it)
-6. [ Subscribe and watch others that are on similar level.](#6-subscribe-and-watch-others-that-are-on-similar-level)
+6. [Subscribe and watch others that are on similar level.](#6-subscribe-and-watch-others-that-are-on-the-similar-level)
 7. [Think bigger. Set your goals and stand your ground.](#7-think-bigger-set-your-goals-and-stand-your-ground)
 8. [Join forces.](#8-join-forces)
 9. [Changelog](#changelog)
