@@ -15,7 +15,8 @@ Recently, I was able to advise a few people on how they can start to learn cyber
 6. [Subscribe and watch others that are on similar level.](#6-subscribe-and-watch-others-that-are-on-the-similar-level)
 7. [Think bigger. Set your goals and stand your ground.](#7-think-bigger-set-your-goals-and-stand-your-ground)
 8. [Join forces.](#8-join-forces)
-9. [Changelog](#changelog)
+9. [Bonus: other aggregates.](#9-bonus-other-aggregates)
+10. [Changelog](#changelog)
 ***
 
 ## ⚠ 1. Understand what it means to hack ethically.
@@ -116,9 +117,16 @@ Look for healthy communities that will help you with your struggles. Did you get
 * 👉 [Discord: HackTheBox](https://discord.com/invite/hackthebox)
 * 👉 [Discord: TryHackMe](https://discord.com/invite/tryhackme)
 
+## 🍦 9. Bonus: other aggregates.
+
+* Great [Hakluke's huge list of resources for beginner hackers](https://labs.detectify.com/2021/08/24/hakluke-list-resources-for-beginner-hackers-2021/) containing some resources already mentioned by me and much more!
+
 ### And what do **you** think about it? Would you add something to the list? Please share your experience in the comments 👇!
 
 ## 📑 Changelog
+
+#### 2021/08/01
+* *Hakluke's huge list of resources for beginner hackers* added.
 
 #### 2021/08/25
 * Added Discord Servers links
