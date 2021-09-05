@@ -101,7 +101,7 @@ By searching through the list of employees, the only Evelyn that works in QuanTe
 
 ![2021-09-01-19-46-54.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630769238912/dXWst9Rla.png)
 
-QuanTech is _providing services and creating innovative software using quantum computers_. By joining their ranks, I can read that _the simulation_ or _experiment_ is a main area of their focus. Apparently they were successful to connect to other quantum computer, but - low and behold - data they've received didn't match any existing operating system or world information. Do they established connection to some artificial or extraterrestrial network? Apparently, employees of QuanTech had the same doubts and thoughts.
+QuanTech is _providing services and creating innovative software using quantum computers_. By joining their ranks, I can read that _the simulation_ or _experiment_ is a main area of their focus. Apparently they were successful to connect to other quantum computer, but - lo and behold - data they've received didn't match any existing operating system or world information. Do they established connection to some artificial or extraterrestrial network? Apparently, employees of QuanTech had the same doubts and thoughts.
 
 ![2021-09-01-20-03-48.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630769231211/yf9wjSbad.png)
 
