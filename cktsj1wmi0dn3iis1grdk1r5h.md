@@ -161,3 +161,7 @@ Turn off the system and create a snapshot of the fresh state of the virtual mach
 * [Android-x86 - Porting Android to x86](https://www.android-x86.org)
 
 [Back to top](#contents) ⤴
+
+
+> 
+Malware icon made by [Eucalyp](https://creativemarket.com/eucalyp) from https://www.flaticon.com/
