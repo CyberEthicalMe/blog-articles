@@ -4,9 +4,7 @@
 
 > The work is going well on Santa's toy workshop but we lost contact with the manager in charge! We suspect the evil elves have taken over the workshop, can you talk to the worker elves and find out?
 
-This is a complete write-up for the badRansomware challenge at Business CTF 2021 hosted by Hack The Box. This article is a part of the HTB Business CTF 2021 series.
-
-Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
+This is a complete write-up for the Toy Workshop challenge at Cyber Santa CTF 2021 hosted by Hack The Box. Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
 
 # Basic information
 
