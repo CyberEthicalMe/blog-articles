@@ -1,17 +1,5 @@
 ## How to install Kali on a Raspberry Pi
 
-***
-# Contents
-1. [What do you need](#what-do-you-need)
-* [Download image](#download-image)
-* [Install Kali on SD Card](#install-kali-on-sd-card)
-* [Headless configuration](#headless-configuration)
-* [Hardening](#hardening)
-* [Personalization](#personalization)
-* [Final touches](#final-touches)
-* [Additional readings](#additional-readings)
-***
-
 > 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring with the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.  
 Join our [Discord Server](https://discord.com/invite/5MjU4Cxf3R)!
 
@@ -28,8 +16,6 @@ I have used the following products when working on this project.
 * [Raspberry Pi 4 Power Supply](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=f9288f89019f6d23193fea412b1edc27&camp=1789&creative=9325&index=pc-hardware&keywords=Raspberry Pi 4 power supply)
 * [Argon NEO Raspberry Pi 4 Case](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=1d54365ad856ebd3302123f1ab9bd077&camp=1789&creative=9325&index=aps&keywords=Argon NEO Raspberry Pi 4 Case)
 * [Ethernet cable (for the initial configuration or Internet over LAN)](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=cd2a7a8fed42fb54e767b06829a01902&camp=1789&creative=9325&index=electronics&keywords=ethernet cable)
-
-[Back to top](#contents) ⤴
 
 ### Raspberry Pi
 
@@ -50,8 +36,6 @@ Connected to the same network as Raspberry Pi. Needed to handle first configurat
 Plain and simple - go to [download pages](https://www.kali.org/get-kali/#kali-arm) and grab an image for your Raspberry.
 
 ![2021-08-22-09-58-57.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629641818981/ijcVztHPO.png)
-
-[Back to top](#contents) ⤴
 
 # Download image
 
@@ -84,8 +68,6 @@ Now run the command to verify file integrity
 ![2021-08-11-19-15-43.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629641895310/RADr8hETN.png)
 
 If hashes are the same - you can with certain probability say that the file is unaltered.
-
-[Back to top](#contents) ⤴
 
 # Install Kali on SD Card
 
@@ -146,8 +128,6 @@ gateway 192.168.0.1
 
 Or setup it on your gateway - in my DHCP settings I can specify MAC address to have the same IP every time it is connected.
 
-[Back to top](#contents) ⤴
-
 ## Set up DNS
 
 Right now, you don't have the connection to the Internet (unless you have a DNS Server at default configuration).
@@ -173,8 +153,6 @@ sudo raspi-config --expand-rootfs
 ```
 
 After that completes, you will be asked to restart the device. Type `sudo reboot` and connect again after Raspberry is booted and SSH service is running.
-
-[Back to top](#contents) ⤴
 
 > Do you like what you see? Join the [Hashnode.com](https://blog.cyberethical.me/join) now and start publishing. Things that are awesome:
 
@@ -234,8 +212,6 @@ Now you should be able to access your account via the SSH connection.
 
 > When using the PuTTY you should use the PuTTY Key Generator like it os described [here](https://www.ssh.com/academy/ssh/putty/windows/puttygen).
 
-[Back to top](#contents) ⤴
-
 ## Disable root & password login
 
 We don't need to `root` login, so we can disable it
@@ -285,8 +261,6 @@ sudo apt autoclean
 > Alternatively have a file with your aliases and additional configuration downloaded and applied.  
 See my example of a configuration files on GitHub repository [Kali Linux on Amazon EC2 | Kali configuration](https://blog.cyberethical.me/kali-linux-on-amazon-ec2#kali-configuration)
 
-[Back to top](#contents) ⤴
-
 # Personalization
 
 ## Terminal colors
@@ -322,8 +296,6 @@ $ usermod --shell /bin/zsh asentinn
 
 ![2021-08-21-12-51-31.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629642296996/Y50pLBfiP.png)
 
-[Back to top](#contents) ⤴
-
 # Final touches
 
 Now you can continue with the advices gathered in my previous article on [Kali Linux on Amazon EC2](https://blog.cyberethical.me/kali-linux-on-amazon-ec2). For example, you could probably have noticed already that <kbd>Ctrl</kbd> + arrow keys doesn't do the word movements. 
@@ -341,8 +313,6 @@ As you can see, even the weakest AWS EC2 box is much more efficient in calculati
 It is possible to SSH into the device over the Internet - it is a very useful option in my opinion, especially if you are working over VPN and can't simply access the local private network.
 
 However, most certainly this requires port forwarding setup on your gateway to pass through the 22 port into the device IP - this is specific to your manufacturer and is not in scope of this guide. To make it work, search in the manual of your gateway device (home router from the Internet provider) how to expose certain ports to the outside through port forwarding.
-
-[Back to top](#contents) ⤴
 
 # Additional readings
 
@@ -367,5 +337,3 @@ However, most certainly this requires port forwarding setup on your gateway to p
 * [How can I resize my / (root) partition?](https://raspberrypi.stackexchange.com/questions/499/how-can-i-resize-my-root-partition)
 * [Resize SD Card Partitions](https://www.raspberrypi-spy.co.uk/2012/06/resize-sd-card-partitions/)
 * [raspi-config](https://elinux.org/RPi_raspi-config)
-
-[Back to top](#contents) ⤴
