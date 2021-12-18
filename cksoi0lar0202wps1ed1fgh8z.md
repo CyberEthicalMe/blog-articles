@@ -33,7 +33,7 @@ I have used the following products when working on this project.
 
 ### Raspberry Pi
 
-I can't guarantee any model would have enough calculation power - but **I think** version 3 would be sufficient. I'm using the Raspberry Pi 4B - which I finally received after [as a reward for the most interesting write-up](https://www.instagram.com/p/CPsT-6oBGq5/?utm_source=ig_web_copy_link) from the DataDog CTF.
+I can't guarantee any model would have enough calculation power - but **I think** version 3 would be sufficient. I'm using the Raspberry Pi 4B - which I finally received [as a reward for the most interesting write-up](https://www.instagram.com/p/CPsT-6oBGq5/?utm_source=ig_web_copy_link) from the DataDog CTF.
 
 ### SD Card
 
