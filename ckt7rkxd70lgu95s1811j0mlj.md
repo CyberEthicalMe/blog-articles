@@ -2,7 +2,9 @@
 
 # Summary
 
-### Update: 🏃 Join  [WWH Discord server](https://discord.gg/ZmD8Hc2NjP)  and play the demo right now!
+### [2021/12/22 Update: Steam Release](https://store.steampowered.com/app/1765690/World_Wide_Hack/?utm_source=discord_cmp_asentinn) 
+
+🏃 Join  [WWH Discord server](https://discord.gg/ZmD8Hc2NjP)
 
 [Lotus Innovations](https://lotusinnovations.eu/) delivers in their alpha game [World Wide Hack](https://www.kickstarter.com/projects/lotus-innovations/world-wide-hack-realistic-mmo-hacking-experience) a very deep and real representation of a company and great potential in story telling. The amount of work put into the project so far is satisfactory, and I'm anticipating to see how the game will look at the early beta version because **I chose to pledge the WWH on the Kickstarter**.
 
