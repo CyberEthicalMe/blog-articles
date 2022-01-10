@@ -18,6 +18,9 @@ When solving objectives, the Story unfolds.
 
 # Quick Recap
 
+> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider [one-time 1€ support](https://buy.stripe.com/cN2g0dfmsb0K12gbII) or custom amount via [Sponsor button](/sponsor) or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) for bonus content. 
+Join our [Discord Server](https://discord.com/invite/5MjU4Cxf3R)!
+
 ## Terminal and Objective Challenges
 
 This event has two kinds of challenges.
