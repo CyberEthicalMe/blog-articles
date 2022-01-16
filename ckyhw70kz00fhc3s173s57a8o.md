@@ -239,7 +239,9 @@ I have neglected this site and I want to do more of it in 2022 to use my premium
 
 # Wrap-up
 
-Overall, I am proud of my achievements from the last year. I understand concepts of ethical hacking, pentesting and security hardening in a way I feel comfortable talking about it.
+Overall, I am proud of my achievements from the last year. I understand concepts of ethical hacking, pentesting and security hardening in a way I feel comfortable talking about it. And this year, my main goal is to get into the bug bounty and make my first submission.
+
+Follow and subscribe to be up-to-date with ethical hacking in the upcoming 2022!
 
 > 📌 Follow the `#CyberEthical` hashtag on the social media  
 > 🎁 Become a Patron and [gain additional benefits](https://www.patreon.com/cyberethicalme)  
