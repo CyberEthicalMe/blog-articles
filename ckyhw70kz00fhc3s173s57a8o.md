@@ -6,6 +6,8 @@
 
 ## Blog
 
+%%[support-cta]
+
 As a blogging platform, Hashnode performs really well. You don't have to manually tinker with the SEO (Search Engine Optimization), you can use your own domain, etc.
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1641726097359/C9vv7w91B.png)
@@ -26,14 +28,7 @@ I like the rising curve, but is it a stable growth? I would be able to say more 
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1641741085475/Lv2w5ipTc.png)
 
-> Do you like what you see? Join the 🔗[Hashnode.com](https://blog.cyberethical.me/join) now and start publishing.  
->✔ Automatic GitHub Backup  
->✔ Write in Markdown  
->✔ Free domain mapping  
->✔ CDN hosted images  
->✔ Free built-in newsletter service  
->✔ Built-in blog monetizing through the Sponsor feature  
-> By using my link, you can help me unlock the ambassador role, which cost you nothing and gives me some additional features to support my content creation mojo.
+%%[join-cta]
 
 ## Instagram/Facebook ... Meta?
 
@@ -115,9 +110,9 @@ I wish we have more discussions there, even when I start some topic I get close 
 
 🔗 [Join CyberEthical.Me community on the Discord](https://discord.com/invite/5MjU4Cxf3R)
 
-# Participations & media presence
+# Participation & media presence
 
-I have learnt that it is very hard to both focus on taking notes that will be usable later when doing write-ups while going through CTF challenges. I really liked these events that grant at least 24h after competition to go through all tasks and fill the blanks in the reports.
+I have learned that it is very hard to both focus on taking notes that will be usable later when doing write-ups while going through CTF challenges. I really liked these events that grant at least 24h after competition to go through all tasks and fill the blanks in the reports.
 
 ## HackTheBox Cyber Apocalypse CTF 2021
 
@@ -243,10 +238,4 @@ Overall, I am proud of my achievements from the last year. I understand concepts
 
 Follow and subscribe to be up-to-date with ethical hacking in the upcoming 2022!
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media  
-> 🎁 Become a Patron and [gain additional benefits](https://www.patreon.com/cyberethicalme)  
-> 👾 Join CyberEthical [Discord server](https://discord.com/invite/5MjU4Cxf3R)  
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)  
-> 👉 LinkedIn: [CyberEthical.Me](https://www.linkedin.com/company/cyberethical-me)  
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)  
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
+%%[follow-cta]
