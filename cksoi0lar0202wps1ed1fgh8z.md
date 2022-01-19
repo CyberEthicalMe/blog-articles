@@ -1,8 +1,5 @@
 ## How to install Kali on a Raspberry Pi
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring with the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.  
-Join our [Discord Server](https://discord.com/invite/5MjU4Cxf3R)!
-
 # What do you need
 
 ### My setup
@@ -38,6 +35,8 @@ Plain and simple - go to [download pages](https://www.kali.org/get-kali/#kali-ar
 ![2021-08-22-09-58-57.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629641818981/ijcVztHPO.png)
 
 # Download image
+
+%%[support-cta]
 
 ![2021-08-11-18-50-08.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1629641843467/5YjTNSpAR.png)
 
@@ -98,6 +97,18 @@ $ nmap.exe -sn 192.168.1.1/24
 
 > Local private networks are most often configured as `192.168.*.*` or `10.*.*.*` so you also have to figure that out by discovering IP address and Gateway address for the other system (`ip addr` or `ipconfig /all`).
 
+Alternatively, you can run following commands to use the Product info from MAC Address Vendor info
+```sh
+# Ubuntu and Mac OS
+# may require `sudo apt install net-tools`
+arp -na | grep -i "b8:27:eb"
+arp -na | grep -i "dc:a6:32" # Raspberry Pi 4
+
+# Windows
+arp -a | findstr b8-27-eb
+arp -a | findstr dc-a6-32 # Raspberry Pi 4
+```
+
 ## Static IP
 
 If you are setting up the Raspberry to be connected only to one network, you can assign it the static IP, so you can skip the discovery step each time the device is powered on.
@@ -154,21 +165,7 @@ sudo raspi-config --expand-rootfs
 
 After that completes, you will be asked to restart the device. Type `sudo reboot` and connect again after Raspberry is booted and SSH service is running.
 
-> Do you like what you see? Join the [Hashnode.com](https://blog.cyberethical.me/join) now and start publishing. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free built-in newsletter service
-
->✔ Built-in blog monetizing through the Sponsor feature
-
-> By using my link, you can help me unlock the ambassador role, which cost you nothing and gives me some additional features to support my content creation mojo.
+%%[join-cta]
 
 # Hardening
 
@@ -275,7 +272,7 @@ The solution for this is setting the terminal type string in `PuTTY` to `xterm`.
 
 ## Change default shell
 
-> Unfortunately I found the `zsh` shell via PuTTY, somewhat faulty when working multiline command and using autocomplete. If you know how properly use the 
+> Unfortunately I found the `zsh` shell via PuTTY, somewhat faulty when working multiline command and using autocomplete. If you know how properly setup `zsh`, please comment below
 
 Let's say right now user have default `bash` shell, and you want to have it changed to `zsh`.
 
@@ -318,19 +315,7 @@ However, most certainly this requires port forwarding setup on your gateway to p
 
 * [How to configure Kali Linux on AWS EC2](https://blog.cyberethical.me/kali-linux-on-amazon-ec2)
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 🎁 Become a Patron and [gain additional benefits](https://www.patreon.com/cyberethicalme)
-
-> 👾 Join CyberEthical [Discord server](https://discord.com/invite/5MjU4Cxf3R)
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 LinkedIn: [Kamil Gierach-Pacanek](https://www.linkedin.com/in/kamilpacanek)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
+%%[follow-cta]
 
 * [Bash VS Zsh: Differences and Comparison](https://linuxhint.com/differences_between_bash_zsh/)
 * [What is ZSH, and Why Should You Use It Instead of Bash?](https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/)
