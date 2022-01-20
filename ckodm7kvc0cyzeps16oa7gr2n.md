@@ -4,20 +4,9 @@
 
 Inspector Gadget was known for having a multitude of tools available for every occasion. Can you find them all?
 
-
 > Complete write up for the Inspector Gadget challenge at Cyber Apocalypse 2021 CTF hosted by HackTheBox.eu. This article is a part of a [CTF: Cyber Apocalypse 2021](https://blog.cyberethical.me/series/ctf-cyber-apocalypse-2021) series. You can fork all my writeups directly from the [GitHub](https://github.com/KamilPacanek/writeups).
 
 > Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
-
-***
-# Contents
-
-1. [Introduction](#introduction)
-2. [Basic Information](#basic-information)
-3. [Target of Evaluation](#target-of-evaluation)
-4. [Recon](#recon)
-5. [Flag](#flag)
-***
 
 # Basic Information
 
@@ -31,15 +20,13 @@ Inspector Gadget was known for having a multitude of tools available for every o
 |Author	| **Asentinn** / OkabeRintaro
 |		| [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[patreon-btn]
+%%[support-cta]
 
 # Target of Evaluation 
 
 We are given the IP and a port as a target of evaluation:
 
 * `46.101.54.25:31511`
-
-[Back to top](#contents) ⤴
 
 # Recon
 
@@ -49,7 +36,7 @@ Doing the initial scan with `nmap` to find more about the ToE:
 
 `sudo nmap -A -Pn -p 31511 46.101.54.25 -oN nmap/initial.nmap`
 
-```
+```txt
 # Nmap 7.91 scan initiated Mon Apr 19 20:48:54 2021 as: nmap -A -Pn -p 31511 -oN nmap/initial.nmap 46.101.54.25
 Nmap scan report for 46.101.54.25
 Host is up (0.043s latency).
@@ -146,7 +133,7 @@ Given port is a TCP open port for which `nmap` could not determine OS version al
 
 ## Website
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
+%%[join-cta]
 
 Let's try to open this in browser as GET gives some HTML code.
 
@@ -171,7 +158,7 @@ Starts with `console.log`, that apparently I've missed:
 console.log("us3full_1nf0rm4tion}");
 ```
 
-Now checking the combination of the two phrases I've found so far.
+Now, checking the combination of the two phrases I've found so far.
 
 The following are **not** the correct flags:
 
@@ -190,24 +177,10 @@ After trying to enable controls that are disabled in the `update()` (`THREE.TOUC
 
 Let's try then once again to assemble the flag.
 
-[Back to top](#contents) ⤴
-
 # Flag
 
 **CHTB{1nsp3ction_c4n_r3ve4l_us3full_1nf0rm4tion}**
 
-> Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
+%%[follow-cta]
 
 *Cover photo by [Ales Nesetril](https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
