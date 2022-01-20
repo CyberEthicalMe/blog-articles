@@ -9,21 +9,6 @@ Outdated Alien technology has been found by the human resistance. The system mig
 
 > Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
 
-***
-# Contents
-
-1. [Introduction](#introduction)
-2. [Contents](#contents)
-3. [Basic Information](#basic-information)
-4. [Target of Evaluation](#target-of-evaluation)
-5. [Recon](#recon)
-6. [Exploit](#exploit)
-7. [Flag](#flag)
-8. [Additional readings](#additional-readings)
-***
-
-# Basic Information
-
 |  |  |
 |:--    |:--|
 |Type    |CTF / Web
@@ -34,7 +19,7 @@ Outdated Alien technology has been found by the human resistance. The system mig
 |Author	| **Asentinn** / OkabeRintaro
 |		| [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[patreon-btn]
+%%[support-cta]
 
 # Target of Evaluation 
 
@@ -416,7 +401,7 @@ So let's write a script.
 
 # Exploit
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
+%%[join-cta]
 
 I'm borrowing the baseline script from [0daylabs](https://blog.0daylabs.com/2016/09/05/mongo-db-password-extraction-mmactf-100). After some modifications:
 
@@ -464,24 +449,11 @@ Fire and forget. Sit back and feel like a movie hacker :)
 
 **CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}**
 
-
-> Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
-
 [Back to top](#contents) ⤴
 
 # Additional readings
+
+%%[follow-cta]
 
 * [NoSQL injection cheatsheet](https://book.hacktricks.xyz/pentesting-web/nosql-injection#extract-data-information)
 * [NoSQL Injections and How to Avoid Them](https://www.acunetix.com/blog/web-security-zone/nosql-injections/)
