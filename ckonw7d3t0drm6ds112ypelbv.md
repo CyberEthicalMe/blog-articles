@@ -8,18 +8,6 @@ cURL As A Service or CAAS is a brand new Alien application, built so that humans
 
 > Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
 
-***
-# Contents
-
-1. [Introduction](#introduction)
-2. [Basic Information](#basic-information)
-3. [Target of Evaluation](#target-of-evaluation)
-4. [Recon](#recon)
-5. [Exploit](#exploit)
-6. [Flag](#flag)
-7. [Additional readings](#additional-readings)
-***
-
 # Basic Information
 
 | #     |   |
@@ -32,7 +20,7 @@ cURL As A Service or CAAS is a brand new Alien application, built so that humans
 |Author  | **Asentinn** / OkabeRintaro
 |       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[patreon-btn]
+%%[support-cta]
 
 # Target of Evaluation 
 
@@ -253,7 +241,7 @@ Ok, we have a main point of interest. We can see that constructor builds the `cu
               place.
 ```
 
-Ok so we a have a red flag here - **the value that is being passed in the request is used to build a shell command that is executed**. Ok, but what about `escapeshellcmd`?
+Ok, so we have a red flag here - **the value that is being passed in the request is used to build a shell command that is executed**. Ok, but what about `escapeshellcmd`?
 
 #### `escapeshellcmd ( string $command ) : string`
 
@@ -273,11 +261,9 @@ But what it doesn't do and what can be exploited (and will be in this box) is pa
 
 Ok, so we have a vulnerability we're going to exploit.
 
-[Back to top](#contents) ⤴
-
 # Exploit
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
+%%[join-cta]
 
 Now, `curl` have one parameter, that existence is not that obvious for a command that almost always is used to make a request under given address.
 
@@ -302,7 +288,7 @@ Yeah. We can force the application to send any file it has access to, via the re
 
 ## Setup listener
 
-In this challenge we are not given the VPN, all boxes are exposed to the global network. So we have to make a tunnel to our localhost.
+In this challenge we are not given the VPN, all boxes are exposed to the global network. So, we have to make a tunnel to our localhost.
 
 I'm using `ngrok` in one terminal:
 
@@ -365,42 +351,16 @@ CHTB{f1le_r3trieval_4s_a_s3rv1ce}
 --------------------------a588a0571ed8077f--
 ```
 
-[Back to top](#contents) ⤴
-
 # Flag
 
 **CHTB{f1le_r3trieval_4s_a_s3rv1ce}**
 
-> Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
-
-[Back to top](#contents) ⤴
-
 # Additional readings
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
+%%[follow-cta]
 
 * [Differences between escapeshellarg and escapeshellcmd](https://stackoverflow.com/a/22739494)
 * [How exploit/bypass/use PHP escapeshellarg/escapeshellcmd functions](https://github.com/kacperszurek/exploits/blob/master/GitList/exploit-bypass-php-escapeshellarg-escapeshellcmd.md)
 * [man curl](https://linux.die.net/man/1/curl)
-
-[Back to top](#contents) ⤴
 
 *Cover photo by [Ales Nesetril](https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
