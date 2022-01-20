@@ -4,26 +4,13 @@
 
 The secretary of earth defense has been kidnapped. We have sent our elite team on the enemy's base to find his location. Our team only managed to intercept this traffic. Your mission is to retrieve secretary's hidden location.
 
-
 > Complete write up for the Key Mission challenge at Cyber Apocalypse 2021 CTF hosted by HackTheBox.eu. This article is a part of a [CTF: Cyber Apocalypse 2021](https://blog.cyberethical.me/series/ctf-cyber-apocalypse-2021) series. You can fork all my writeups directly from the [GitHub](https://github.com/KamilPacanek/writeups).
 
 > Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
 
-***
-# Contents
-
-1. [Introduction](#introduction)
-2. [Basic Information](#basic-information)
-3. [Target of Evaluation](#target-of-evaluation)
-4. [Analysis](#analysis)
-5. [Parsing the packet file](#parsing-the-packet-file)
-6. [Flag](#flag)
-7. [Additional readings](#additional-readings)
-***
-
 # Basic Information
 
-|  |   |
+|  # |   |
 |:--    |:--|
 |Type    |CTF / Forensics
 |Name    | **Cyber Apocalypse 2021 / Key Mission**
@@ -33,7 +20,7 @@ The secretary of earth defense has been kidnapped. We have sent our elite team o
 |Author	| **Asentinn** / OkabeRintaro
 |		| [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[patreon-btn]
+%%[support-cta]
 
 # Target of Evaluation
 
@@ -61,8 +48,6 @@ Unfortunately, it just leaves a lot of new lines (or maybe my parameters are wro
 
 # Parsing the packet file
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
-
 With the great support of the AliBawazeEer's writeup from Kaizen CTF 2018 (check _Additional readings_ section) we know what to do. I'm also using the script provided by the AliBawazeEer to map the hex codes to actual key inputs.
 
 I'm opening pcap with `Wireshark`. Notice that there are multiple sequences of packets with 64 and 72 bytes of data - we are interested in these 72 ones because they carry the keystroke data in the `HID Data`.
@@ -83,7 +68,7 @@ cat dumps/01_keystrokes_packets.csv | cut -d "," -f 7 | cut -d "\"" -f 2 > dumps
 
 ## `02_keystrokes_hex.txt`
 
-Now it's time forhex to actual key values conversion. For this I'm using the modified version of the AliBawazeEer's script:
+Now it's time for to actual key values conversion. For this, I'm using the modified version of the AliBawazeEer's script:
 
 ```python
 # Original version by AliBawazeEer
@@ -179,7 +164,7 @@ with open('dumps/03_keystrokes.txt', 'r') as inFile:
 				repeats = 0	
 ```
 
-I've noticed that single character input spans across at most 16 interruptions. So to not loose some multi-keystrokes I'm counting how many same inputs I had. I'm stripping the newline and write to the output.
+I've noticed that single character input spans across at most 16 interruptions. So to not lose some multi-keystrokes I'm counting how many same inputs I had. I'm stripping the newline and write to the output.
 
 ## `04_truncated_message.txt`
 
@@ -221,9 +206,11 @@ with open('dumps/03_keystrokes.txt', 'r') as inFile:
 
 But unfortunately, this also is not the correct flag. By analyzing the `03_keystrokes.txt` I see that this is not `Eaedelrth` but `Earth` because the last few strokes are `del`.. `CHTB{A_Plac3_FAR_FAR_Away_Fr0m_Earth}` is also wrong.
 
-When I stared a bit longer at the intermediate files I realized I've got the casing wrong all the time. I've been interpreting `shift` packets as an uppercase switch for the next character. Which is clearly wrong because `shift`s come in two patterns: 10 and 18 inputs. So, it clearly must mean press and release!
+When I stared a bit longer at the intermediate files, I realized I've got the casing wrong all the time. I've been interpreting `shift` packets as an uppercase switch for the next character. Which is clearly wrong because `shift`s come in two patterns: 10 and 18 inputs. So, it clearly must mean press and release!
 
 Let's try again.
+
+%%[join-cta]
 
 ```python
 #truncate.py (1.2)
@@ -274,23 +261,11 @@ Script is not perfect: the first character in flag `A` should be lowercase. This
 
 **CHTB{a_plac3_fAr_fAr_away_fr0m_earth}**
 
-> Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
-
 [Back to top](#contents) ⤴
 
 # Additional readings
+
+%%[follow-cta]
 
 * [kaizen-ctf 2018 — Reverse Engineer usb keystrok from pcap file](https://abawazeeer.medium.com/kaizen-ctf-2018-reverse-engineer-usb-keystrok-from-pcap-file-2412351679f4)
 * [USB HID Usage Tables](https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf)
