@@ -8,11 +8,11 @@ I have used the following products when working on this project.
 
 > I'm getting a small commision for the purchases made from the links below
 
-* [Raspberry Pi 4B 8GB RAM](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=573d310eeab036ced050f4f059cd47f9&camp=1789&creative=9325&index=pc-hardware&keywords=Raspberry Pi 4B 8GB RAM)
-* [32GB SD Card (SanDisk)](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=be0f39748f2d9f7d7bfa7b0d5164ad47&camp=1789&creative=9325&index=aps&keywords=32GB SD Card C10 SanDisk)
-* [Raspberry Pi 4 Power Supply](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=f9288f89019f6d23193fea412b1edc27&camp=1789&creative=9325&index=pc-hardware&keywords=Raspberry Pi 4 power supply)
-* [Argon NEO Raspberry Pi 4 Case](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=1d54365ad856ebd3302123f1ab9bd077&camp=1789&creative=9325&index=aps&keywords=Argon NEO Raspberry Pi 4 Case)
-* [Ethernet cable (for the initial configuration or Internet over LAN)](https://www.amazon.com/gp/search?ie=UTF8&tag=cyberethical-20&linkCode=ur2&linkId=cd2a7a8fed42fb54e767b06829a01902&camp=1789&creative=9325&index=electronics&keywords=ethernet cable)
+* [Raspberry Pi 4B 8GB RAM](https://amzn.to/3GSMxTV)
+* [32GB SD Card (SanDisk)](https://amzn.to/3AgJt1w)
+* [Raspberry Pi 4 Power Supply](https://amzn.to/3KrMzEt)
+* [Argon NEO Raspberry Pi 4 Case](https://amzn.to/3tLgn9l)
+* [Ethernet cable (for the initial configuration or Internet over LAN)](https://amzn.to/3fLdnkS)
 
 ### Raspberry Pi
 
