@@ -8,17 +8,6 @@ You found one of their space suits forgotten in a room. You wear it, but before 
 
 > Learn more from additional readings found at the end of the article. I would be thankful if you mention me when using parts of this article in your work. Enjoy!
 
-***
-# Contents
-1. [Introduction](#introduction)
-2. [Basic Information](#basic-information)
-3. [Target of Evaluation](#target-of-evaluation)
-4. [Analysis](#analysis)
-5. [Debugging](#debugging)
-6. [Flag](#flag)
-7. [Additional readings](#additional-readings)
-***
-
 # Basic Information
 
 |  # |  |
@@ -31,7 +20,7 @@ You found one of their space suits forgotten in a room. You wear it, but before 
 |Author	| **Asentinn** / OkabeRintaro
 |		| [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
 
-%%[patreon-btn]
+%%[support-cta]
 
 # Target of Evaluation 
 
@@ -129,7 +118,7 @@ $ nm passphrase
                  U usleep@@GLIBC_2.2.5
 ```
 
-We can see that at the address 0x00202010 it does string compare. So it confirms the assumption from before.
+We can see that at the address 0x00202010 it does string compare. So, it confirms the assumption from before.
 
 Dump Procedure Linkage Table:
 
@@ -200,11 +189,9 @@ Disassembly of section .plt:
 
 Nothing to see here.
 
-[Back to top](#contents) ⤴
-
 # Debugging
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
+%%[join-cta]
 
 Now that we know what to look for, let's try `strace ./passphrase` and `ltrace ./passphrase`.
 
@@ -253,37 +240,13 @@ printf("\nSorry for suspecting you, pleas"..., "3xtr4t3rR3stR14L5_VS_hum4n5"
 Sorry for suspecting you, please transfer this important message to the chief: CHTB{3xtr4t3rR3stR14L5_VS_hum4n5}
 ```
 
-[Back to top](#contents) ⤴
-
 # Flag
 
 **CHTB{3xtr4t3rR3stR14L5_VS_hum4n5}**
 
-> Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
-
-[Back to top](#contents) ⤴
-
 # Additional readings
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
+%%[follow-cta]
 
 * [How to Analyze an ELF Executable File](https://workinjapan.today/hightech/linux-lessons-how-to-analyze-elf-files/)
 * [man ltrace](https://man7.org/linux/man-pages/man1/ltrace.1.html)
@@ -291,7 +254,5 @@ Sorry for suspecting you, please transfer this important message to the chief: C
 * [man ldd](https://man7.org/linux/man-pages/man1/ldd.1.html)
 * [man nm](https://man7.org/linux/man-pages/man1/nm.1p.html)
 * [man objdump](https://linux.die.net/man/1/objdump)
-
-[Back to top](#contents) ⤴
 
 *Cover photo by [Ales Nesetril](https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
