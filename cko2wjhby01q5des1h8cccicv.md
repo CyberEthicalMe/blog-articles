@@ -397,8 +397,6 @@ user=admin&password[$regex]=CHTB.*
 
 So let's write a script.
 
-[Back to top](#contents) ⤴
-
 # Exploit
 
 %%[join-cta]
@@ -443,13 +441,9 @@ while restart:
 
 Fire and forget. Sit back and feel like a movie hacker :)
 
-[Back to top](#contents) ⤴
-
 # Flag
 
 **CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}**
-
-[Back to top](#contents) ⤴
 
 # Additional readings
 
@@ -459,7 +453,5 @@ Fire and forget. Sit back and feel like a movie hacker :)
 * [NoSQL Injections and How to Avoid Them](https://www.acunetix.com/blog/web-security-zone/nosql-injections/)
 * [MongoDB - Extracting data (admin password) using NoSQL Injection - MMACTF 2016 Web 100 writeup](https://blog.0daylabs.com/2016/09/05/mongo-db-password-extraction-mmactf-100)
 * [What is NoSQL Injection and How Can You Prevent It?](https://www.netsparker.com/blog/web-security/what-is-nosql-injection/)
-
-[Back to top](#contents) ⤴
 
 *Cover photo by [Ales Nesetril](https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
