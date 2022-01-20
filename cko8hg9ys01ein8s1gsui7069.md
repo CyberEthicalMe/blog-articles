@@ -44,8 +44,6 @@ tshark -r key_mission.pcap -T fields -e usb.capdata > keystrokes.txt
 
 Unfortunately, it just leaves a lot of new lines (or maybe my parameters are wrong). Let's fire up the `Wireshark` and look at the packets itself.
 
-[Back to top](#contents) ⤴
-
 # Parsing the packet file
 
 With the great support of the AliBawazeEer's writeup from Kaizen CTF 2018 (check _Additional readings_ section) we know what to do. I'm also using the script provided by the AliBawazeEer to map the hex codes to actual key inputs.
@@ -255,13 +253,9 @@ with open('dumps/03_keystrokes.txt', 'r') as inFile:
 
 Script is not perfect: the first character in flag `A` should be lowercase. This is because between `[` and `a` are 36 `shift`s, not 38 - I don't know why. Maybe I've lost some during the parsing.
 
-[Back to top](#contents) ⤴
-
 # Flag
 
 **CHTB{a_plac3_fAr_fAr_away_fr0m_earth}**
-
-[Back to top](#contents) ⤴
 
 # Additional readings
 
@@ -270,7 +264,5 @@ Script is not perfect: the first character in flag `A` should be lowercase. This
 * [kaizen-ctf 2018 — Reverse Engineer usb keystrok from pcap file](https://abawazeeer.medium.com/kaizen-ctf-2018-reverse-engineer-usb-keystrok-from-pcap-file-2412351679f4)
 * [USB HID Usage Tables](https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf)
 * [man cut](https://man7.org/linux/man-pages/man1/cut.1.html)
-
-[Back to top](#contents) ⤴
 
 *Cover photo by [Ales Nesetril](https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
