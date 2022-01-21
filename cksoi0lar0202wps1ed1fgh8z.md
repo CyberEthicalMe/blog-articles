@@ -184,7 +184,7 @@ $ sudo usermod -aG sudo USER
 ## Verify
 
 ```
-$ sudo su - USER
+$ sudo su USER
 $ id
 $ logout
 ```
@@ -199,10 +199,10 @@ If you do not have already an RSA private/public key-pair lying around, you can 
 $ ssh-keygen -t rsa
 ```
 
-Then secure copy the public key to the Raspberry.
+Then copy the **public** key to the user home.
 
 ```
-$ ssh-copy-id -i $HOME/.ssh/id_rsa.pub USER@IP
+$ nano ~/.ssh/authorized_keys
 ```
 
 Now you should be able to access your account via the SSH connection.
