@@ -9,7 +9,7 @@ I have used the following products when working on this project.
 > I'm getting a small commision for the purchases made from the links below
 
 * [Raspberry Pi 4B 8GB RAM](https://amzn.to/3GSMxTV)
-* [32GB SD Card (SanDisk)](https://amzn.to/3AgJt1w)
+* [SD Card (at least 32GB)](https://amzn.to/3AgJt1w)
 * [Raspberry Pi 4 Power Supply](https://amzn.to/3KrMzEt)
 * [Argon NEO Raspberry Pi 4 Case](https://amzn.to/3tLgn9l)
 * [Ethernet cable (for the initial configuration or Internet over LAN)](https://amzn.to/3fLdnkS)
