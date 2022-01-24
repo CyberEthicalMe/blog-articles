@@ -1,4 +1,4 @@
-## Run Kasm Workspaces on Raspberry Pi
+## Kasm Workspaces: Spinning up on the Raspberry Pi
 
 > Raspberry Pi Kasm Guide was inspired by [NetworkChuck](https://www.youtube.com/watch?v=U7e-mcJdZok), go watch this and his other videos, he's living inspiration ☕
 
