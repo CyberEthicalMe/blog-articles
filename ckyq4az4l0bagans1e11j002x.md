@@ -42,6 +42,11 @@ $ source ~/.bash_aliases
 1. Login via SSH ([default credentials](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#4-boot-ubuntu-server) `ubuntu:ubuntu`) and change password to more secure one - we will be using it later for `sudo` commands.
 * As we didn't have possibility to change username or hostname during the system installation, we have option to do it now. Change hostname (`/etc/hosts` and `/etc/hostname`, then reboot).
 * Now perform following steps from [Hardening](https://blog.cyberethical.me/how-to-install-kali-on-a-raspberry-pi#heading-hardening) section: *Add new suduer account*, * Enable SSH login*, *Disable root & password login*, *Remove default user*.
+* Add the following aliases to your `.bash_aliases`. These are easier to call than remembering the paths.
+```sh
+alias kasm-start="sudo /opt/kasm/bin/stop"
+alias kasm-stop="sudo /opt/kasm/bin/start"
+```
 
 # Mandatory post-install steps
 
