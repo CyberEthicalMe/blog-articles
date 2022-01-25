@@ -44,8 +44,8 @@ $ source ~/.bash_aliases
 * Now perform following steps from [Hardening](https://blog.cyberethical.me/how-to-install-kali-on-a-raspberry-pi#heading-hardening) section: *Add new suduer account*, * Enable SSH login*, *Disable root & password login*, *Remove default user*.
 * Add the following aliases to your `.bash_aliases`. These are easier to call than remembering the paths.
 ```sh
-alias kasm-start="sudo /opt/kasm/bin/stop"
-alias kasm-stop="sudo /opt/kasm/bin/start"
+alias kasm-start="sudo /opt/kasm/bin/start"
+alias kasm-stop="sudo /opt/kasm/bin/stop"
 ```
 
 # Mandatory post-install steps
