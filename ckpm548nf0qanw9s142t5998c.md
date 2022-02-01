@@ -101,20 +101,20 @@ Look for healthy communities that will help you with your struggles. Did you get
 
 ## 📑 Changelog
 
-#### 2021/08/01
+*2021/08/01*  
 * *Hakluke's huge list of resources for beginner hackers* added.
 
-#### 2021/08/25
+*2021/08/25*  
 * Added Discord Servers links
 
-#### 2021/07/07
+*2021/07/07*  
 * Added THM Pre Security Learning Path
 * Added The OWASP top 10 demystified by The XSS Rat
 
-#### 2021/06/27
+*2021/06/27*  
 * Linked [HTB Starting Point write-up series](/series/htb-starting-point)
 
-#### 2021/06/08
+*2021/06/08*  
 * Added David Bombal and Neal Bridges discussions
 
 %%[follow-cta]
