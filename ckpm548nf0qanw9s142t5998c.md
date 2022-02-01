@@ -1,27 +1,12 @@
 ## How can I learn Ethical Hacking? Where should I start?
 
-Recently, I was able to advise a few people on how they can start to learn cybersecurity through offensive security and pentesting. I realized that instead of repeating myself I can write that down in an article, so it can be shared with anyone interested in expanding their itsec skills. I'll keep this article updated.
+Recently, I was able to advise a few people on how they can start to learn cybersecurity through offensive security and pentesting. I realized that instead of repeating myself, I can write that down in an article, so it can be shared with anyone interested in expanding their itsec skills. I'll keep this article updated.
 
-%%[patreon-btn]
-
-***
-# Contents
-
-1. [Understand what it means to hack ethically.](#1-understand-what-it-means-to-hack-ethically)
-2. [Hand-on experience, AKA <em>keep your hands dirty</em>.](#2-hand-on-experience-aka-keep-your-hands-dirty)
-3. [When hands are tired - watch meaty online courses.](#3-when-hands-are-tired-watch-meaty-online-courses)
-4. [Use vulnerables to practice live example scenarios.](#4-use-vulnerables-to-practice-live-example-scenarios)
-5. [See how the pros do it.](#5-see-how-the-pros-do-it)
-6. [Subscribe and watch others that are on similar level.](#6-subscribe-and-watch-others-that-are-on-the-similar-level)
-7. [Think bigger. Set your goals and stand your ground.](#7-think-bigger-set-your-goals-and-stand-your-ground)
-8. [Join forces.](#8-join-forces)
-9. [Bonus: other aggregates.](#9-bonus-other-aggregates)
-10. [Changelog](#changelog)
-***
+%%[support-cta]
 
 ## ⚠ 1. Understand what it means to hack ethically.
 
-This is crucial to understand that without a purpose tools are neutral. They are neither bad nor good - with a kitchen knife one can slice an onion, or wound somebody. The same rule applies to every pentesting tool that you are going to use. You must have that in mind, that only you are responsible for the consequences of your actions.
+This is crucial to understand that without a purpose, tools are neutral. They are neither bad nor good - with a kitchen knife one can slice an onion, or wound somebody. The same rule applies to every pentesting tool that you are going to use. You must have that in mind, that only you are responsible for the consequences of your actions.
 
 Read the disclaimer here: [Disclaimer](https://github.com/KamilPacanek/Disclaimer-Warning/blob/main/README.md)
 
@@ -30,8 +15,6 @@ Fortunately, any of the courses I spotlight here starts with ethical hacking con
 > To be clear if your purpose is to conduct mallicious activity - stay away from this site. I will never consciously help in performing such activities. 
 
 > [How to hack your ex-girlfriends Facebook account](https://hakluke.com/how-to-hack-your-ex-girlfriends-facebook-account/)
-
-[Back to top](#contents) ⤴
 
 ## 🔧 2. Hand-on experience, AKA *keep your hands dirty*.
 
@@ -60,8 +43,6 @@ If you can spend a few bucks (or wait for the occasional discounts) this is a we
 
 👉  [The OWASP top 10 demystified by XSS Rat](https://www.udemy.com/course/the-owasp-top-10-demystified/)
 
-[Back to top](#contents) ⤴
-
 ## 🌋 4. Use vulnerables to practice live example scenarios. 
 
 Vulnerables are purposely crafted vulnerable applications or even whole operating systems like [Metasploitable](https://docs.rapid7.com/metasploit/setting-up-a-vulnerable-target) that you can use in your **isolated internal** network or play with them on a Docker.
@@ -76,11 +57,9 @@ Are you a sports fan? Do you like watching online tournaments? Even if not, trus
 
 👉 Amazing David Bombal and Neal Bridges [YouTube playlist](https://www.youtube.com/playlist?list=PLhfrWIlLOoKP14oFy1o-xJ6lBmkqrxWx1) - talks about starting ethical hacking, red/blue teaming, certificates and pentester software.
 
-[Back to top](#contents) ⤴
-
 ## 🔊 6. Subscribe and watch others that are on the similar level.
 
-For this, I recommend following my #CyberEthical contents on [Instagram](https://www.instagram.com/cyber.ethical.me/) and on [LinkedIn](https://www.linkedin.com/in/kamilpacanek/detail/recent-activity/shares/). Add your mail to the mailing list on this site - you will be notified only on a new content on my blog.
+For this, I recommend following my #CyberEthical contents on [Instagram](https://www.instagram.com/cyber.ethical.me/) and on [LinkedIn](https://www.linkedin.com/company/cyberethical-me). Add your mail to the mailing list on this site - you will be notified only on a new content on my blog.
 
 Have a look at these: 
 
@@ -90,10 +69,7 @@ Have a look at these:
 
 And, because the best way to learn is to get engaged with others - I recommend you to [join the Hashnode](/join) yourself and share with others as you learn.
 
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
-
-
-[Back to top](#contents) ⤴
+%%[join-cta]
 
 ## 🎯 7. Think bigger. Set your goals and stand your ground.
 
@@ -141,14 +117,4 @@ Look for healthy communities that will help you with your struggles. Did you get
 #### 2021/06/08
 * Added David Bombal and Neal Bridges discussions
 
-[Back to top](#contents) ⤴
-
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 LinkedIn: [Kamil Gierach-Pacanek](https://www.linkedin.com/in/kamilpacanek)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
+%%[follow-cta]
