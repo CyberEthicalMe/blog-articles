@@ -97,7 +97,7 @@ Look for healthy communities that will help you with your struggles. Did you get
 
 * Great [Hakluke's huge list of resources for beginner hackers](https://labs.detectify.com/2021/08/24/hakluke-list-resources-for-beginner-hackers-2021/) containing some resources already mentioned by me and much more!
 
-### And what do **you** think about it? Would you add something to the list? Please share your experience in the comments 👇!
+**And what do you think about it? Would you add something to the list? Please share your experience in the comments 👇!**
 
 ## 📑 Changelog
 
