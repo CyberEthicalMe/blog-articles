@@ -1,19 +1,8 @@
 ## How to install Kali on the Virtual Machine
 
-***
-# Contents
-1. [Download system image](#download-system-image)
-2. [Create new VM](#create-new-vm)
-3. [Network interfaces](#network-interfaces)
-4. [Install Kali from image](#install-kali-from-image)
-5. [Last steps](#last-steps)
-6. [Additional readings](#additional-readings)
-***
-
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring with the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.  
-Join our [Discord Server](https://discord.com/invite/5MjU4Cxf3R)!
-
 # Download system image
+
+%%[support-cta]
 
 Go to [Kali download page](https://www.kali.org/get-kali/#kali-bare-metal). For this guide, I'm choosing the bare-metal option because I used to this form of installation, and it gives me always a bit more control over the process.
 
@@ -26,8 +15,6 @@ This way, we will be proceeding as if we have an installer disk and a clean work
 ![kali-bare-sum.gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257652432/hDN8N0-p3.gif)
 
 We are going to deal with an offensive security oriented system, so it is especially **crucial** to verify that the file was not corrupted or altered in any way. Follow the steps described in [How to install Kali on a Raspberry Pi: Download image](https://blog.cyberethical.me/how-to-install-kali-on-a-raspberry-pi#download-image).
-
-[Back to top](#contents) ⤴
 
 # Create new VM
 
@@ -74,8 +61,6 @@ You can ask a question: "we have chosen the RAM, the disk - what about CPU cores
 
 ![2021-08-29-11-11-34.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257735424/NraLCR216.png)
 
-[Back to top](#contents) ⤴
-
 # Network interfaces
 
 This topic is so wide that it deserves a separate article. You can find a great elaboration on the [Nakivo blog](https://www.nakivo.com/blog/virtualbox-network-setting-guide/). I want to have an Internet access from this VM, so I'm leaving the default NAT.
@@ -102,23 +87,7 @@ Next steps are pretty straightforward.
 
 ![kali-bare-install.gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257779274/Z9lXcS5SW.gif)
 
-[Back to top](#contents) ⤴
-
-> Do you like what you see? Join the [Hashnode.com](https://blog.cyberethical.me/join) now and start publishing. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free built-in newsletter service
-
->✔ Built-in blog monetizing through the Sponsor feature
-
-> By using my link, you can help me unlock the ambassador role, which cost you nothing and gives me some additional features to support my content creation mojo.
+%%[join-cta]
 
 ## Choose partitioning method
 
@@ -152,8 +121,6 @@ I am using the whole available space
 And finally leave _Finish partitioning_ to write changes to disk.
 ![2021-08-29-14-33-31.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257824004/ttMre-3I1.png)
 
-[Back to top](#contents) ⤴
-
 ## Additional software
 
 ![2021-08-29-14-46-46.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257818359/TsaWfxfu4.png)
@@ -167,8 +134,6 @@ Follow screenshots to finish installation.
 ![2021-08-29-16-05-25.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257836226/dBc_-_N_N.png)
 ![2021-08-29-16-08-58.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257842828/CjmMPT-AX.png)
 ![2021-08-29-16-11-28.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257848218/wg54cwAid.png)
-
-[Back to top](#contents) ⤴
 
 # Last steps
 
@@ -187,31 +152,14 @@ And we hit the limit. In the next article, I'll show how to resize disk.
 For example, this is how it looks on my 5 month's personal installation:
 ![2021-08-29-16-40-55.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1630257879448/huB5ubOHP.png)
 
-[Back to top](#contents) ⤴
-
 # Additional readings
 
 * [Kali installation on AWS EC2](https://blog.cyberethical.me/kali-linux-on-amazon-ec2)
 * [Kali installation on Raspberry Pi](https://blog.cyberethical.me/how-to-install-kali-on-a-raspberry-pi)
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 🎁 Become a Patron and [gain additional benefits](https://www.patreon.com/cyberethicalme)
-
-> 👾 Join CyberEthical [Discord server](https://discord.com/invite/5MjU4Cxf3R)
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 LinkedIn: [Kamil Gierach-Pacanek](https://www.linkedin.com/in/kamilpacanek)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
-
+%%[follow-cta]
 
 * [VirtualBox Network Settings: Complete Guide](https://www.nakivo.com/blog/virtualbox-network-setting-guide)
 * [When to use LVM](https://blog.vpscheap.net/when-to-use-lvm/)
 * [Logical Volume Manager (LVM) versus standard partitioning in Linux](https://www.redhat.com/sysadmin/lvm-vs-partitioning)
 * [Pros and cons of encrypted LVM](https://www.reddit.com/r/debian/comments/iyxz9s/pros_and_cons_of_encrypted_lvm/)
-
-[Back to top](#contents) ⤴
