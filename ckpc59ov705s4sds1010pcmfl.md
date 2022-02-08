@@ -6,16 +6,6 @@ The best way to learn hacking is to keep practicing. But, remember what does it 
 
 So, at some point of your learning path, in my opinion, you should have many vulnerables at your disposal, and you should be in total control over them. One of such examples can be Damn Vulnerable Web Application.
 
-***
-# Contents
-1. [Obtaining](#obtaining)
-2. [Running](#running)
-3. [Access](#access)
-4. [Configuration](#configuration)
-5. [Persistence](#persistence)
-6. [Additional readings](#additional-readings)
-***
-
 # Obtaining
 
 ###   ⚠**Disclaimer**⚠
@@ -41,9 +31,7 @@ hello-world            latest    d1165f221234   2 months ago   13.3kB
 vulnerables/web-dvwa   latest    ab0d83586b6e   2 years ago    712MB
 ```
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
-
-%%[patreon-btn]
+%%[support-cta]
 
 # Running
 
@@ -147,7 +135,9 @@ Last thing to say is that DVWA has 4 difficulty (security) settings. Go to the _
 
 # Persistence
 
-Now that we have modified the **running** docker container, we should somehow make our changes persist through consecutive runs (because next time we start a docker image it will start as a fresh instance - that's the whole idea of containers). This can be done at least in two ways I am aware of - and I didn't find any meaningful differences between them.
+%%[join-cta]
+
+Now that we have modified the **running** docker container, we should somehow make our changes persist through consecutive runs (because next time we start a docker image it will start as a fresh instance - that's the whole idea of containers). This can be done at least in two ways, I am aware of - and I didn't find any meaningful differences between them.
 
 ## Patch the original image
 
@@ -174,7 +164,7 @@ vulnerables/web-dvwa   patched   a17d6c740d6e   17 seconds ago   826MB
 vulnerables/web-dvwa   latest    ab0d83586b6e   2 years ago      712MB
 ```
 
-If you want to run patched version specify tag, like so:
+If you want to run patched version, specify tag, like so:
 
 ```sh
 $ docker run --rm -it -d -p 127.0.0.1:80:80 vulnerables/web-dvwa:patched
@@ -202,30 +192,10 @@ vulnerables/web-dvwa       latest    ab0d83586b6e   2 years ago      712MB
 
 > **Did you know about DVWA before reading this article? Have you been using it? Let me know in the comments below.**
 
-> Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
-
->✔ Automatic GitHub Backup
-
->✔ Write in Markdown
-
->✔ Free domain mapping
-
->✔ CDN hosted images
-
->✔ Free in-built newsletter service
-
-> By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
 
 # Additional readings
 
-> 📌 Follow the `#CyberEthical` hashtag on the social media
-
-> 👉 Instagram: [@cyber.ethical.me](https://www.instagram.com/cyber.ethical.me/)
-
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
-
-> 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
-
+%%[follow-cta]
 
 * [DVWA Home](https://dvwa.co.uk/)
 * [Official DockerHub for DVWA](https://hub.docker.com/r/vulnerables/web-dvwa)
