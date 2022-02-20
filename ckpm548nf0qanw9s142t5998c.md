@@ -83,8 +83,6 @@ As for setting the goals, a recently OSCP certified [Prateek Srivastava](https:/
 * [OSCP: My journey from Blue Team to Red Team](https://theblackalbum.medium.com/oscp-my-journey-from-blue-team-to-red-team-a4ca8c3fb11a)
 * [PWK: My Journey and Review](https://theblackalbum.medium.com/pwk-my-journey-and-review-c2e3253f029f)
 
-> 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
-
 ## 🚸 8. Join forces.
 
 Look for healthy communities that will help you with your struggles. Did you get blocked on the hacking box? Couldn't get the reverse shell, although you are doing everything correctly? We all are facing these problems and sometimes just a little nudge or sanity check from the other person is what makes you understand your mistake - or simply realize you are doing everything alright, just have to restart that server.
