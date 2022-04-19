@@ -92,7 +92,7 @@ router.get('/queries', async (req, res, next) => {
 });
 ```
 
-The `/queries` endpoint is called by the browser emulator - [Puppeteer]().
+The `/queries` endpoint is called by the browser emulator - [Puppeteer](https://github.com/puppeteer/puppeteer).
 
 ```js
 //bot.js
