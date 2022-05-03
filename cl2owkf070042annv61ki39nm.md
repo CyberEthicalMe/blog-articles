@@ -34,7 +34,6 @@ For those who don't know yet, what did I wrong… Let me share something
 
 **I typed `AddressFamily inet4` instead `AddressFamily inet`**. Yet another example where Linux basically allows you to do anything you want.
 
-
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1651339395897/Bjj-NFXK1.png align="center") *("Source": https://9gag.com/gag/abVPE5O)*
 
 Because I didn't brick the system and all I need is to change that line in the `sshd_config` - solution was simple. Mount that SD card in another Linux system and edit file.
@@ -45,6 +44,8 @@ Problem was that my main and only bare-metal system is Windows. So, I had to mou
 
 To be able to see the SD card on the Linux inside VirtualBox you have to prepare VMDK ([Virtual Machine Disk](https://en.wikipedia.org/wiki/VMDK)) file linked to the device.
 
+> You have to repeat these steps each time device is inserted in USB. Windows will assign it the new `PHYSICALDRIVE` number.
+
 1. Put your SD card in a card reader (or USB adapter) and connect to the hardware.
 2. Open PowerShell as an administrator. List available storage devices with `wmic diskdrive list brief`
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1651340469231/UZMLLhKvd.png align="center")
@@ -54,6 +55,9 @@ To be able to see the SD card on the Linux inside VirtualBox you have to prepare
 .\VBoxManage.exe internalcommands createrawvmdk -filename D:\ETH\pi.vmdk -rawdisk \\.\PHYSICALDRIVE3
 ```
 5. Run VirtualBox as administrator (file was created by the administrator, so a regular user won't be able to access it in VirtualBox). Note: VM should be turned off.
+
+> If you have changed the VMDK file (ex. generated once again for new `PHYSICALDRIVE`) that is already imported in VirtualBox, you have to remove it and add again (in *File* -> *Virtual Media Manager...*). Otherwise machine with attached VMDK won't run.
+
 6. Open *Settings* for guest Linux machine. Navigate to *Storage*. Locate SATA Controller and enable *Use Host I/O Cache*.
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1651344440808/Tzq5cGFGq.png align="center")
 7. Click small *Add hard disk* icon.
