@@ -62,7 +62,7 @@ You are welcomed with the following screen.
 
 %%[support-cta]
 
-# Configuring mount points.
+# Configuring mount points
 
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1663452051571/WE3mRTzpk.png align="center")
