@@ -439,13 +439,13 @@ When I connect to the given Docker instance I was presented with the question I 
 
 ![2022-10-25-18-40-55.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666847840207/4ssoPmEGg.png align="left")
 
-#### Which is the malicious URL that the ransomware was downloaded from? (for example: http://maliciousdomain/example/file.extension)
+🔸 **Which is the malicious URL that the ransomware was downloaded from? (for example: http://maliciousdomain/example/file.extension)**  
 
 ![2022-10-25-20-04-44.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666847913424/v5HvQAyhG.png align="left")
 
 Answer: `http://files.pypi-install.com/packages/a5/61/caf3af6d893b5cb8eae9a90a3054f370a92130863450e3299d742c7a65329d94/pygaming-dev-13.37.tar.gz`
 
-#### What is the name of the malicious process? (for example: malicious)
+🔸 **What is the name of the malicious process? (for example: malicious)**  
 
 ```sh
 $ alias volatility='python2 /opt/volatility/vol.py'
@@ -465,9 +465,9 @@ configure         1341   SSH_CONNECTION=10.0.2.2 59640 10.0.2.15 22 LESSCLOSE=/u
 
 Answer: `configure`
 
-#### Provide the md5sum of the ransomware file.
+🔸 **Provide the md5sum of the ransomware file.**  
 
-Quickest and most reliable way is to [save the file directly](https://www.rubyguides.com/2012/01/four-ways-to-extract-files-from-pcaps/) from the `*.pcap` file using Wireshark.
+The quickest and most reliable way is to [save the file directly](https://www.rubyguides.com/2012/01/four-ways-to-extract-files-from-pcaps/) from the `*.pcap` file using Wireshark.
 
 ```sh
 $ tar xf pygaming-dev-13.37.tar.gz 
@@ -480,7 +480,7 @@ $ md5sum configure
 
 Answer: `7c2ff873ce6b022663a1f133383194cc`
 
-#### Which programming language was used to develop the ransomware? (for example: nim)
+🔸 **Which programming language was used to develop the ransomware? (for example: nim)**  
 
 ```
 $ strings configure
@@ -502,7 +502,7 @@ Cannot dlsym for Py_DecRef
 
 Answer: `python`
 
-#### After decompiling the ransomware, what is the name of the function used for encryption? (for example: encryption)
+🔸 **After decompiling the ransomware, what is the name of the function used for encryption? (for example: encryption)**  
 
 ```
 python pyinstxtractor.py configure
@@ -511,7 +511,7 @@ pycdc configure.pyc > ../source/configure.py
 
 Answer: `mv18jiVh6TJI9lzY`
 
-#### Decrypt the given file, and provide its md5sum.
+🔸 **Decrypt the given file, and provide its md5sum.**  
 
 ```py
 #!/usr/bin/python
@@ -629,7 +629,7 @@ Given: Docker address, archive
 
 ![2022-10-26-19-02-18.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666849028622/1D5JLI8L6.png align="left")
 
-### Which event log contains information about logon and logoff events? (for example: Setup)
+🔸 **Which event log contains information about logon and logoff events? (for example: Setup)**  
 
 ```
 apt intstall python3-evtx
@@ -651,18 +651,18 @@ done
 
 Answer: `Security`
 
-### What is the event id for logs for a successful logon to a local computer? (for example: 1337)
+🔸 **What is the event id for logs for a successful logon to a local computer? (for example: 1337)**  
 
 Source
 * https://www.manageengine.com/products/active-directory-audit/kb/windows-security-log-event-id-4624.html
 
 Answer: `4624`
 
-### Which is the default Active Directory authentication protocol? (for example: http)
+🔸 **Which is the default Active Directory authentication protocol? (for example: http)**  
 
 Answer: `kerberos` (Google that, if unknown to you)
 
-### Looking at all the logon events, what is the AuthPackage that stands out as different from all the rest? (for example: http)
+🔸 **Looking at all the logon events, what is the AuthPackage that stands out as different from all the rest? (for example: http)**  
 
 ```
 $ cat Logs.parsed/Security.evtx.xml | grep -i "authenticationpackage" | sort | uniq -c
@@ -711,7 +711,7 @@ As you can see suspicious `Computer` entries `srv01.boocorp.htb` are present in 
 
 Answer: `ntlm`
 
-### What is the timestamp of the suspicious login (yyyy-MM-ddTHH:mm:ss) UTC? (for example, 2021-10-10T08:23:12)
+🔸 **What is the timestamp of the suspicious login (yyyy-MM-ddTHH:mm:ss) UTC? (for example, 2021-10-10T08:23:12)**  
 
 ```
 $ cat Logs.parsed/Security.evtx.xml | grep -i "4624</EventID>" -A 36 -B 1 | grep -i "srv01.boocorp.htb" -B 12 -A 32 | grep -i "ionpackagename\">ntlm" -A 12 -B 25
