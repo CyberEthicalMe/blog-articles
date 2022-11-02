@@ -57,7 +57,7 @@ After the booting on fresh system, Grub won't recognize/discover the encrypted v
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667152618184/2wKFA_PNl.png align="left")
 * Unlock the encrypted volume.
 ```sh
-$ cryptsetup luksOpen /dev/sda5 gabor2-crypt
+$ cryptsetup luksOpen /dev/sda6 gabor2-crypt
 ```
 > If you care of naming your encrypted volume (it will be visible on passphrase prompt each boot) change the `gabor2-crypt` to your liking and use that name consistently during further steps.
 * After decryption, LVM content should be visible in both `fdisk -l` and `lsblk`
