@@ -12,6 +12,8 @@ This one I didn't achieve because I was contracted to prepare [Hacking Course on
 
 # 🏆 Yearly Summaries
 
+> This section is updated yearly, so current ongoing year is not reflected here.
+
 %%[support-cta]
 
 ## 2021
