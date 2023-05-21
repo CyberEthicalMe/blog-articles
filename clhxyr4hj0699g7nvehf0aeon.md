@@ -103,7 +103,7 @@ We've got the Python code that was used to hide a message in the image. Shortly 
 
 1. Decode the message to binary representation (each char to int, then to binary)
     
-2. Reads the image pixels' RBG values row by row.
+2. Reads the image pixels' RBG values column by column.
     
 3. For each R, G, B value encode single bit of message.
     
