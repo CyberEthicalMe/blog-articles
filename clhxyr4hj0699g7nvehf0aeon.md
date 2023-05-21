@@ -242,6 +242,14 @@ So the objective here is to submit a `payload` with a `GET` request. There was a
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684660662444/a2f12318-d5fa-458c-96e9-02f6d3b63f39.png align="center")
 
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684707787784/a2d43a3f-3bdc-4c76-9e92-f8959cc82f61.png align="center")
+
+Then I've put that char-train/snake into VSCode, replaced all `||` with `+` then slapped that into the python interpreter.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684707900683/cf9ea5fc-1444-4bed-8fae-94833c297da3.png align="center")
+
+All that is left is decoding base64 to get the flag.
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684660688598/40535aed-93e0-4d40-bd0e-72f7816e4a36.png align="center")
 
 # Challenge 8: betrayal
