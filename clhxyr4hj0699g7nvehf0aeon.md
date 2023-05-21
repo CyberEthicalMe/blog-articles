@@ -77,7 +77,7 @@ Basic SQL Injection - with a twist, becasue
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684657024076/9dd52763-c352-4a19-9074-f83fa0e50824.png align="center")
 
-and Adam apparently did exactly what he was told to do. Injection `' or 1=1 --` doesn't work, but `' or 2=2 --` is 😉.
+and Adam apparently did exactly what he was told to do. Injection `' or 1=1 --` doesn't work, but `' OR 2=2 --` is 😉.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684657108339/80aa390c-170e-4511-8afe-db2d2bc1cf4d.png align="center")
 
