@@ -19,52 +19,6 @@ Knowing this, I have registered on the original Vallheru. I can immediately see 
 
 Challenge details and target site is presented with Polish language, but because of this being a [disclosed event](https://www.facebook.com/SecuRingPL/posts/4303361866387309?comment_id=4304078719648957&reply_comment_id=4304281252962037) I'm preparing this write-up for a wider audience.
 
----
-
-# Contents
-
-1. [Basic Information](#basic-information)
-    
-
-* [Web Challenges](#web-challenges)
-    
-    * [Witamy w Dębinie!](#witamy-w-debinie)
-        
-    * [Nie jesteś władcą!](#nie-jestes-wladca)
-        
-    * [Zdrój wiedzy](#zdroj-wiedzy)
-        
-    * [Promocja](#promocja)
-        
-    * [Subskrybcja](#subskrybcja)
-        
-    * [Kukła](#kukla)
-        
-    * [Jubiler](#jubiler)
-        
-    * [Prohibicja](#prohibicja-unsolved)
-        
-* [Cryptography Challenges](#cryptography-challenges)
-    
-    * [ROTmistrz](#rotmistrz)
-        
-    * [Rozmowa](#rozmowa)
-        
-    * [Pęk kluczy](#pek-kluczy)
-        
-* [Binary Challenges](#binary-challenges)
-    
-    * [Szafa grająca](#szafa-grajaca-unsolved)
-        
-* [Steganography Challenges](#steganography-challenges)
-    
-    * [Zabytkowy zegar](#zabytkowy-zegar-unsolved)
-        
-* [Additional readings](#additional-readings)
-    
-
----
-
 # Basic Information
 
 | # |  |
