@@ -1,8 +1,17 @@
-# HackTheBoo 2022 CTF Write-Ups
+---
+title: "HackTheBoo 2022 CTF Write-Ups"
+seoDescription: "October is Cybersecurity Awareness Month and form this occasion HackTheBox created a HackTheBook Capture The Flag completion. Forensics, reverse engineering"
+datePublished: Thu Oct 27 2022 13:00:42 GMT+0000 (Coordinated Universal Time)
+cuid: cl9r2pxof006ap3nvdfiq431s
+slug: hacktheboo-2022-htb-ctf-write-ups
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1666856289941/C2LXHVtFS.png
+tags: hacking, reverse-engineering, ctf, forensics, write-up
 
-%%[support-cta]
+---
 
-It's been a while since I have participated in HackTheBox Capture The Flag event. The platform got a really nice, fresh look to it.
+%%[support-cta] 
+
+It's been a while since I have participated in [HackTheBox](https://affiliate.hackthebox.com/ifqyv26fgiha) Capture The Flag event. The platform got a really nice, fresh look to it.
 
 ![2022-10-22-15-00-32.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666469462336/9VJEqTslX.png align="center")
 
@@ -40,9 +49,13 @@ Python expressions are executed from left to right, can be separated by semicolo
 ![2022-10-22-15-29-53.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666470721257/EkgUC_rkn.png align="center")
 
 **Read more**:
-* [py_compile](https://docs.python.org/3/library/py_compile.html)
+
+* [py\_compile](https://docs.python.org/3/library/py_compile.html)
+    
 * [exec](https://docs.python.org/3/library/functions.html#exec)
+    
 * [popen](https://docs.python.org/3/library/os.html?highlight=popen#os.popen)
+    
 
 ## Horror Feeds
 
@@ -69,8 +82,7 @@ Unfortunately, I can't execute more than one command before committing beforehan
 
 ![2022-10-25-01-26-14.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666824101631/WDyiq9QZO.png align="left")
 
-Because this happens outside my control and I can't do it by myself, I'm stuck with one command.
-There is however, a way to force change password for admin by using MariaDB/MySQL [extension](https://mariadb.com/kb/en/insert-on-duplicate-key-update/) `INSERT ON DUPLICATE KEY UPDATE`. This way I can update the admin row regardless of its presence in the database.
+Because this happens outside my control and I can't do it by myself, I'm stuck with one command. There is however, a way to force change password for admin by using MariaDB/MySQL [extension](https://mariadb.com/kb/en/insert-on-duplicate-key-update/) `INSERT ON DUPLICATE KEY UPDATE`. This way I can update the admin row regardless of its presence in the database.
 
 ```json
 {"username":"admin\",\"$2b$12$jSXUhVnIZ8eHQbynD1y1TuZL7oMVevF8ORjYwQCFGlN0RbRgnf9Ei\") ON DUPLICATE KEY UPDATE password=\"$2b$12$jSXUhVnIZ8eHQbynD1y1TuZL7oMVevF8ORjYwQCFGlN0RbRgnf9Ei\"#","password":"1234"}
@@ -80,8 +92,10 @@ After sending the payload, I'm receiving success message on registering account 
 
 ![2022-10-25-02-29-24.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666824441562/ZtBkVLMfn.png align="left")
 
-**Read more**:  
+**Read more**:
+
 * https://mariadb.com/kb/en/insert-on-duplicate-key-update/
+    
 
 ## Spookifier
 
@@ -100,13 +114,14 @@ def generate_render(converted_fonts):
 	return Template(result).render()
 ```
 
-Further message proves the Mako templates RCE vulnerability over [context-free payloads](ttps://podalirius.net/en/articles/python-context-free-payloads-in-mako-templates/) (running `os.system(..) function`).  
+Further message proves the Mako templates RCE vulnerability over [context-free payloads](ttps://podalirius.net/en/articles/python-context-free-payloads-in-mako-templates/) (running `os.system(..) function`).
 
 > Worth noting that payload creation could be impossible (or significantly harder) if `font4` would not passthrough non-alfanumeric characters. Here are the steps that leads me to reading the flag.
 
 ![2022-10-23-15-39-49.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666825102472/qmgsbMqlT.png align="left")
 
 ![2022-10-23-15-33-34.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666825129611/-S91HZdPJ.png align="left")
+
 ![2022-10-23-15-47-55.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666825150888/qsqQhFLlo.png align="left")
 
 # Pwn
@@ -120,7 +135,7 @@ Further message proves the Mako templates RCE vulnerability over [context-free p
 **Given**: Docker address + binary  
 **Difficulty**: easy
 
-I have serious lacks in binary exploitation, so for me that was almost pure luck. I have launch Ghidra and opened the binary file. 
+I have serious lacks in binary exploitation, so for me that was almost pure luck. I have launch Ghidra and opened the binary file.
 
 ![2022-10-22-20-44-44.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666471213083/60OpbjcJa.png align="center")
 
@@ -131,7 +146,9 @@ I did notice that almost none of the inputs are validated, only `pumpcoins` valu
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666471465749/UuytJo9-A.png align="center")
 
 **Read more**:
+
 * [CWE-190: Integer Overflow or Wraparound](https://cwe.mitre.org/data/definitions/190.html)
+    
 
 # Reversing
 
@@ -190,7 +207,7 @@ nexti
 
 > You've made contact with a spirit from beyond the grave! Unfortunately, they speak in an ancient tongue of flags, so you can't understand a word. You've enlisted a medium who can translate it, but they like to take their time...
 
-```
+```plaintext
 strings ouija
 ...
 ZLT{Svvafy_kdwwhk_lg_qgmj_ugvw_escwk_al_wskq_lg_ghlaearw_dslwj!}
@@ -244,7 +261,6 @@ void main()
 
     printf(flag);
 }
-
 ```
 
 ![2022-10-26-23-09-00.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666849929037/9TLm29b4H.png align="left")
@@ -255,11 +271,11 @@ void main()
 
 Given: binary and pcap file
 
-%%[join-cta]
+%%[join-cta] 
 
 Me second favourite challenge in this CTF. First we can analyze network traffic, identify 3-way handshake with two data transfers (8 and 32 bytes)
 
-```
+```plaintext
 PSH ACK
 Data: 8 bytes
 2000000000000000 (32,0x20)
@@ -271,7 +287,7 @@ Data: 32 bytes
 
 Now, by analyzing that binary in `ghidra` and deobfuscating the code a bit (changing variables adding comments). We can make sense of it. After analyzing the binary, I know it can safely be run and monitor the sockets to see on which port the listener starts.
 
-```
+```plaintext
 $ ss -t -a
 
 State         Recv-Q     Send-Q              Local Address:Port                   Peer Address:Port     Process     
@@ -306,7 +322,7 @@ Now run the `securetransfer` binary, Python script and flag pops out on the rece
 
 > Quick, there's a new custom Pokemon in the bush called "The Custom Pokemon". Can you find out what its weakness is and capture it?
 
-**Given**:  Python script + text file  
+**Given**: Python script + text file  
 **Difficulty**: easy
 
 Oh, this one was something. Guessing by the difficulty set by HTB team mine solution is totally overkill - but hey, as long as it works!
@@ -359,8 +375,7 @@ print(long_to_bytes(flagVal))
 
 > You are walking with your friends in search of sweets and discover a mansion in the distance. All your friends are too scared to approach the building, so you go on alone. As you walk down the street, you see expensive cars and math papers all over the yard. Finally, you reach the door. The doorbell says "Michael Fastcar". You recognize the name immediately because it was on the news the day before. Apparently, Fastcar is a famous math professor who wants to get everything done as quickly as possible. He has even developed his own method to quickly check if a number is a prime. The only way to get candy from him is to pass his challenge.
 
-**Given**: Docker + source code
-**Difficulty**: easy
+**Given**: Docker + source code **Difficulty**: easy
 
 This time challenge could be solved by not even looking at the source code, only googling the Carmichael numbers and slapping them randomly as inputs to the program. But anyway, reading the code reveals that it expects us to feed it the number that is **simultaneously** prime in definition of custom [Miller-Rabin algorithm](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test), and not prime in definition of `isPrime` from `Crypto.Util.number` library. By reading a bit about Carmichael numbers, they are specific compound numbers. One of such number, apparently breaking a lot of prime checkers, is [Arnault's 397-digit Carmichael number](https://en.wikipedia.org/wiki/Carmichael_number#Overview). So, I'm calculating it "on side" and feed to online docker.
 
@@ -372,7 +387,7 @@ This time challenge could be solved by not even looking at the source code, only
 
 > "I told them it was too soon and in the wrong season to deploy such a website, but they assured me that theming it properly would be enough to stop the ghosts from haunting us. I was wrong." Now there is an internal breach in the `Spooky Network` and you need to find out what happened. Analyze the the network traffic and find how the scary ghosts got in and what they did.
 
-**Given**:  pcap file  
+**Given**: pcap file  
 **Difficulty**: easy
 
 Well, another example of `strings`Mega Chad.
@@ -387,7 +402,7 @@ strings capture.pcap
 
 > Our company has been working on a secret project for almost a year. None knows about the subject, although rumor is that it is about an old Halloween legend where an old witch in the woods invented a potion to bring pumpkins to life, but in a more up-to-date approach. Unfortunately, we learned that malicious actors accessed our network in a massive cyber attack. Our security team found that the hack had occurred when a group of children came into the office's security external room for trick or treat. One of the children was found to be a paid actor and managed to insert a USB into one of the security personnel's computers, which allowed the hackers to gain access to the company's systems. We only have a network capture during the time of the incident. Can you find out if they stole the secret project?
 
-**Given**:  pcap file  
+**Given**: pcap file  
 **Difficulty**: easy
 
 By analyzing packet file in Wireshark there are a lot of DNS requests. Because we know from the description that some attack could have place, first thing that comes to my minds was [data exfiltration over DNS](https://www.infoblox.com/dns-security-resource-center/dns-security-issues-threats/dns-security-threats-data-exfiltration/).
@@ -398,7 +413,7 @@ I'm noticing that running `strings` on given `*.pcap` yields greppable bytes.
 strings capture.pcap | grep "^2" | uniq
 ```
 
-I'm opening this in text editor, removing `2` prefix and joining all words together. In the [CyberChef](https://gchq.github.io/CyberChef/) I'm using `Magic` recipe. Luckily, the tool is able to recognize it is an Excel file. 
+I'm opening this in text editor, removing `2` prefix and joining all words together. In the [CyberChef](https://gchq.github.io/CyberChef/) I'm using `Magic` recipe. Luckily, the tool is able to recognize it is an Excel file.
 
 ![2022-10-23-19-47-39.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666826338521/SBpmmTOqD.png align="left")
 
@@ -413,7 +428,7 @@ Then I'm using the recipe from the left column and search for `HTB` phrase.
 **Given**: archive, encrypted file & pcap file  
 **Difficulty**: easy (?)
 
-%%[support-cta]
+%%[support-cta] 
 
 Oh boy, that was my favorite challenge from this CTF. At each step, I knew what I have to do, but this was the first time I was using all the tools required and it took me 6
 
@@ -431,21 +446,25 @@ Length      Date                Time   Name
 ```
 
 * `candy_dungeon.pdf.boo` - encrypted file, the final goal is to decode it
+    
 * `mem.dmp` - memory dump
+    
 * `Ubuntu_4.15.0-184-generic_profile.zip` - profile for [volatility](https://github.com/volatilityfoundation/volatility) that is required to analyze memory dump
+    
 * `poof_capture.pcap` - network traffic capture file
+    
 
 When I connect to the given Docker instance I was presented with the question I have to answer to see the next question. This way we were led, step by step, to the solution (and flag).
 
 ![2022-10-25-18-40-55.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666847840207/4ssoPmEGg.png align="left")
 
-🔸 **Which is the malicious URL that the ransomware was downloaded from? (for example: http://maliciousdomain/example/file.extension)**  
+🔸 **Which is the malicious URL that the ransomware was downloaded from? (for example: http://maliciousdomain/example/file.extension)**
 
 ![2022-10-25-20-04-44.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666847913424/v5HvQAyhG.png align="left")
 
 Answer: `http://files.pypi-install.com/packages/a5/61/caf3af6d893b5cb8eae9a90a3054f370a92130863450e3299d742c7a65329d94/pygaming-dev-13.37.tar.gz`
 
-🔸 **What is the name of the malicious process? (for example: malicious)**  
+🔸 **What is the name of the malicious process? (for example: malicious)**
 
 ```sh
 $ alias volatility='python2 /opt/volatility/vol.py'
@@ -459,13 +478,14 @@ $ volatility -f files/mem.dmp --profile LinuxUbuntu_4_15_0-184-generic_profilex6
 ```
 
 Inside the process dump:
-```
+
+```plaintext
 configure         1341   SSH_CONNECTION=10.0.2.2 59640 10.0.2.15 22 LESSCLOSE=/usr/bin/lesspipe %s %s LANG=en_US.UTF-8 XDG_SESSION_ID=1 USER=developer PWD=/home/developer/Documents/halloween_python_game/pygaming-dev-13.37 HOME=/home/developer SSH_CLIENT=10.0.2.2 59640 22 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop SSH_TTY=/dev/pts/0 MAIL=/var/mail/developer TERM=tmux-256color SHELL=/bin/bash SHLVL=1 LOGNAME=developer XDG_RUNTIME_DIR=/run/user/1000 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin LESSOPEN=| /usr/bin/lesspipe %s _=./configure OLDPWD=/home/developer/Documents/halloween_python_game _MEIPASS2=/tmp/_MEIiYpNyP _PYI_PROCNAME=configure LD_LIBRARY_PATH=/tmp/_MEIiYpNyP
 ```
 
 Answer: `configure`
 
-🔸 **Provide the md5sum of the ransomware file.**  
+🔸 **Provide the md5sum of the ransomware file.**
 
 The quickest and most reliable way is to [save the file directly](https://www.rubyguides.com/2012/01/four-ways-to-extract-files-from-pcaps/) from the `*.pcap` file using Wireshark.
 
@@ -480,9 +500,9 @@ $ md5sum configure
 
 Answer: `7c2ff873ce6b022663a1f133383194cc`
 
-🔸 **Which programming language was used to develop the ransomware? (for example: nim)**  
+🔸 **Which programming language was used to develop the ransomware? (for example: nim)**
 
-```
+```plaintext
 $ strings configure
 ...
 Py_DontWriteBytecodeFlag
@@ -502,16 +522,16 @@ Cannot dlsym for Py_DecRef
 
 Answer: `python`
 
-🔸 **After decompiling the ransomware, what is the name of the function used for encryption? (for example: encryption)**  
+🔸 **After decompiling the ransomware, what is the name of the function used for encryption? (for example: encryption)**
 
-```
+```plaintext
 python pyinstxtractor.py configure
 pycdc configure.pyc > ../source/configure.py
 ```
 
 Answer: `mv18jiVh6TJI9lzY`
 
-🔸 **Decrypt the given file, and provide its md5sum.**  
+🔸 **Decrypt the given file, and provide its md5sum.**
 
 ```py
 #!/usr/bin/python
@@ -541,9 +561,11 @@ Flag was given after answering last question.
 I've solved one very similar task during the last year [HTB Business CTF](https://blog.cyberethical.me/htb-business-ctf-2021-badransomware) and you can find the detailed solution there.
 
 First, extract the VBA macro:
+
 ```sh
 olevba --deobf invitation.docm > olevba.out
 ```
+
 Then using manual deobfuscation (and [code indenter](https://www.automateexcel.com/vba-code-indenter/)) and VBA documentation I've converted the VBA code to Python script.
 
 ```py
@@ -621,7 +643,7 @@ print(getBase64EncodedPayload())
 
 ![2022-10-24-23-48-47.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666848686166/RVgJYqeCz.png align="left")
 
-## Downgrade 
+## Downgrade
 
 > During recent auditing, we noticed that network authentication is not forced upon remote connections to our Windows 2012 server. That led us to investigate our system for suspicious logins further. Provided the server's event logs, can you find any suspicious successful login?
 
@@ -629,17 +651,17 @@ Given: Docker address, archive
 
 ![2022-10-26-19-02-18.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1666849028622/1D5JLI8L6.png align="left")
 
-🔸 **Which event log contains information about logon and logoff events? (for example: Setup)**  
+🔸 **Which event log contains information about logon and logoff events? (for example: Setup)**
 
-```
+```plaintext
 apt intstall python3-evtx
 ```
 
-```
+```plaintext
 for f in Logs/; do mv "$f" "${f// /_}"; done
 ```
 
-```
+```plaintext
 for file in $(find Logs/ -iname "*.evtx")
 do
 	evtx_dump.py "$file" > Logs.parsed/`basename "$file"`.xml
@@ -651,20 +673,22 @@ done
 
 Answer: `Security`
 
-🔸 **What is the event id for logs for a successful logon to a local computer? (for example: 1337)**  
+🔸 **What is the event id for logs for a successful logon to a local computer? (for example: 1337)**
 
 Source
+
 * https://www.manageengine.com/products/active-directory-audit/kb/windows-security-log-event-id-4624.html
+    
 
 Answer: `4624`
 
-🔸 **Which is the default Active Directory authentication protocol? (for example: http)**  
+🔸 **Which is the default Active Directory authentication protocol? (for example: http)**
 
 Answer: `kerberos` (Google that, if unknown to you)
 
-🔸 **Looking at all the logon events, what is the AuthPackage that stands out as different from all the rest? (for example: http)**  
+🔸 **Looking at all the logon events, what is the AuthPackage that stands out as different from all the rest? (for example: http)**
 
-```
+```plaintext
 $ cat Logs.parsed/Security.evtx.xml | grep -i "authenticationpackage" | sort | uniq -c
       9 <Data Name="AuthenticationPackageName">-</Data>
      16 <Data Name="AuthenticationPackageName">Kerberos</Data>
@@ -672,11 +696,11 @@ $ cat Logs.parsed/Security.evtx.xml | grep -i "authenticationpackage" | sort | u
      27 <Data Name="AuthenticationPackageName">NTLM</Data>
 ```
 
-```
+```plaintext
 cat Logs.parsed/Security.evtx.xml | grep -i "AuthenticationPackageName\">NTLM<" -A 12 -B 25 | less
 ```
 
-```
+```plaintext
 cat Logs.parsed/Security.evtx.xml | grep -i "AuthenticationPackageName\">NTLM<" -A 12 -B 25 | grep -i "<Computer>" -n
 13:<Computer>WIN-HRJHA99CCDO</Computer>
 52:<Computer>VAGRANT-BA88BF0</Computer>
@@ -711,9 +735,9 @@ As you can see suspicious `Computer` entries `srv01.boocorp.htb` are present in 
 
 Answer: `ntlm`
 
-🔸 **What is the timestamp of the suspicious login (yyyy-MM-ddTHH:mm:ss) UTC? (for example, 2021-10-10T08:23:12)**  
+🔸 **What is the timestamp of the suspicious login (yyyy-MM-ddTHH:mm:ss) UTC? (for example, 2021-10-10T08:23:12)**
 
-```
+```plaintext
 $ cat Logs.parsed/Security.evtx.xml | grep -i "4624</EventID>" -A 36 -B 1 | grep -i "srv01.boocorp.htb" -B 12 -A 32 | grep -i "ionpackagename\">ntlm" -A 12 -B 25
 ```
 
@@ -762,4 +786,3 @@ if __name__ == "__main__":
 ```
 
 %%[follow-cta]
-
