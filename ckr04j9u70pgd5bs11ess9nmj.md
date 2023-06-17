@@ -11,7 +11,7 @@ tags: learning, hacking, cybersecurity-1
 
 ---
 
-`Vaccine` is a 3rd box from Starting Point path on [HackTheBox Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones. See the other write-ups [here](https://blog.cyberethical.me/series/htb-starting-point).
+`Vaccine` is a 3rd box from Starting Point path on [HackTheBox Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones. See the other write-ups [here](https://blog.cyberethical.me/series/htb-starting-point).
 
 This box features working with MD5 hashes and escaping user context to root by exploiting sudoer misconfiguration.
 
@@ -22,7 +22,7 @@ This box features working with MD5 hashes and escaping user context to root by e
 | Type | Starting Point |
 | Name | \*\* Hack The Box / Vaccine\*\* |
 | Pwned | 2021/06/01 |
-| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| URLs | [Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp) |
 | Author | **Asentinn** / OkabeRintaro |
 |  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
