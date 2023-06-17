@@ -11,7 +11,7 @@ tags: hacking, cybersecurity-1
 
 ---
 
-`Shield` is a 4th box from Starting Point path on [HackTheBox Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (in a form of credentials) gathered from the previous ones.
+`Shield` is a 4th box from Starting Point path on [HackTheBox Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp). This path is composed of 9 boxes in a way that later boxes use information (in a form of credentials) gathered from the previous ones.
 
 This box features only a root flag. Don't waste your time on finding the `user.txt` - until this is corrected by the Dev Team. I've raised this issue already, so this article will be updated accordingly when status is changed. UPDATE: Apparently this is solved right now and information "No Flag" for user flag is shown correctly both for `Shield` and `Vaccine`.
 
@@ -22,7 +22,7 @@ This box features only a root flag. Don't waste your time on finding the `user.t
 | Type | Starting Point |
 | Name | **Hack The Box / Shield** |
 | Pwned | 2021/06/03 |
-| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| URLs | [Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp) |
 | Author | **Asentinn** / OkabeRintaro |
 |  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
