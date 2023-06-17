@@ -11,7 +11,7 @@ tags: learning, hacking, cybersecurity-1
 
 ---
 
-`Oopsie` is a 2nd box from Starting Point path on [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones.
+`Oopsie` is a 2nd box from Starting Point path on [Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones.
 
 This box features debugging session and MySQL enumeration.
 
@@ -22,7 +22,7 @@ This box features debugging session and MySQL enumeration.
 | Type | Starting Point |
 | Name | \*\* Hack The Box / Oopsie\*\* |
 | Pwned | 2021/05/30 |
-| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| URLs | [Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp) |
 | Author | **Asentinn** / OkabeRintaro |
 |  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
