@@ -11,7 +11,7 @@ tags: hacking, education, cybersecurity-1
 
 ---
 
-`Archetype` is a 1st box from Starting Point path on [HackTheBox](https://affiliate.hackthebox.com/cybeth-htbstart). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones.
+`Archetype` is a 1st box from Starting Point path on [HackTheBox](https://blog.cyberethical.me/go-htbapp). This path is composed of 9 boxes in a way that later boxes use information (like credentials) gathered from the previous ones.
 
 This is a Windows box where you can learn how enumeration can lead to RCE via SQL server queries.
 
@@ -22,7 +22,7 @@ This is a Windows box where you can learn how enumeration can lead to RCE via SQ
 | Type | Starting Point |
 | Name | \*\* Hack The Box / Archetype\*\* |
 | Pwned | 2021/04/19 |
-| URLs | [Starting Point - Tier 2](https://affiliate.hackthebox.com/cybeth-htbstart) |
+| URLs | [Starting Point - Tier 2](https://blog.cyberethical.me/go-htbapp) |
 | Author | **Asentinn** / OkabeRintaro |
 |  | [https://ctftime.org/team/152207](https://ctftime.org/team/152207) |
 
