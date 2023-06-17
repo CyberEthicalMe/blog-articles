@@ -30,11 +30,11 @@ Fortunately, any of the courses I spotlight here starts with ethical hacking con
 
 ✔ For a starter, take the *free* courses on TryHackMe and HackTheBox Academy - both are the first places I would learn from. THM have **Complete Beginner Path** and HTB Academy starts with **Introduction Module**. I haven't completed all available modules yet, but I feel like I know so much more and have that knowledge structuralized.
 
-👉 [My TryHackMe referral link](https://tryhackme.com/signup?referrer=6064cdf43710041136097c64) (please use for $5 discount 🤘 )
+👉 [My TryHackMe referral link](https://blog.cyberethical.me/go-thm) ($5 discount with this link🤘 )
 
 👉 [THM Complete Beginner Path](https://tryhackme.com/path-action/beginner/join)
 
-👉 [HTB Academy Introduction Module](https://affiliate.hackthebox.com/cybeth-intro)
+👉 [HTB Academy Introduction Module](https://blog.cyberethical.me/go-htbintro)
 
 On July 2021 TryHackMe released a **Pre Security Learning Path**. It's a good way to start, but remember that on THM you almost always need a subscription to complete whole modules - for free are the first couple of rooms from a module.
 
