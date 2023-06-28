@@ -14,6 +14,8 @@ tags: hacking, openai, cybersecurity-1, write-up
 
 # The Plan
 
+> Challenge URL: [https://tryhackme.com/jr/midsummer](https://tryhackme.com/jr/midsummer)
+
 There is something I wanted to try since I've watched videos of people creating games without any programming knowledge whatsoever. After [I have created a honeypot using the ChatGPT v3](https://blog.cyberethical.me/ive-asked-chatgpt-to-write-a-honeypot), I'm ready to solve the CTF using AI only: ChatGPT and Bing AI (mostly strict mode) - latter because it has internet access.
 
 For the readability reason, I'm not going to paste whole conversations, but the important bits.
