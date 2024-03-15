@@ -33,7 +33,9 @@ d8cc0505f4a125bb24eaa0a955bc83800678a24570daefa3ab0936a9a095a1e3
 
 Before opening the file I'm marking the files as readonly and noting down its hash. File system contained in AD1 image can be browsed with a [FTK Imager](https://www.exterro.com/digital-forensics-software/ftk-imager).
 
-<details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
+<details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>
+
+!\[\](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
 
 From the challenge description we know that:
 
@@ -150,7 +152,7 @@ We can't access the binaries becasue of how they are stored in the quarantine.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710537153078/ae0e5c40-8368-456c-9201-06b809cc1885.png align="center")
 
-So for that I'm using a [Python script](https://github.com/knez/defender-dump) `defender-dump.py` after I've mounted the AD1 image with the FTK Imager.
+So for that I'm using a [Python script](https://github.com/knez/defender-dump)`defender-dump.py` after I've mounted the AD1 image with the FTK Imager.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710537327881/f08f133c-8b6b-45bf-9fd2-37768f728061.png align="center")
 
