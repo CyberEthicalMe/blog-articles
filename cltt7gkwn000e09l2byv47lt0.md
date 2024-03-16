@@ -38,9 +38,9 @@ Before opening the file I'm marking the files as readonly and noting down its ha
 
 From the challenge description we know that:
 
-* owner of the files was struck with a ransomware rendering the files unusable,
-* important files are located under `\Documents\Work`; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
-* **objective**: recover file
+- owner of the files was struck with a ransomware rendering the files unusable,
+- important files are located under `\Documents\Work`; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
+- **objective**: recover file
     
 
 ## Retrieving encrypted files
