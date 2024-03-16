@@ -36,15 +36,16 @@ d8cc0505f4a125bb24eaa0a955bc83800678a24570daefa3ab0936a9a095a1e3
 
 Before opening the file I'm marking the files as readonly and noting down its hash. File system contained in AD1 image can be browsed with a [FTK Imager](https://www.exterro.com/digital-forensics-software/ftk-imager).
 
-<details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
+<details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
 
 From the challenge description we know that:
-- owner of the files was struck with a ransomware rendering the files unusable,
-- important files are located under \\Documents\\Work; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
-- objective: recover file
 
+* owner of the files was struck with a ransomware rendering the files unusable,
+    
+* important files are located under \\Documents\\Work; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
+    
+* objective: recover file
+    
 
 ## Retrieving encrypted files
 
@@ -239,8 +240,8 @@ Running the code against the encrypted XLSX file yields restored file. Because I
 
 %%[follow-cta] 
 
-* [POOF write-up from HackTheBoo 2022 using volatility2](https://blog.cyberethical.me/hacktheboo-2022-htb-ctf-write-ups#heading-poof)
+* [What is an AD1?](https://dfir.science/2021/09/What-is-an-AD1.html)
     
-* [volatility3 pull request with the hibernation plugins by ForensicXlab](https://github.com/volatilityfoundation/volatility3/pull/1036)
+* [How to Extract Quarantine Files from Windows Defender](https://reversingfun.com/posts/how-to-extract-quarantine-files-from-windows-defender/)
     
-* [Volatility3: Modern Windows Hibernation file analysis by ForensiXlab](https://www.forensicxlab.com/posts/hibernation/)
+* ⭐ [Official HTB write-up](https://github.com/hackthebox/cyber-apocalypse-2024/tree/main/forensics/%5BHard%5D%20Confinement)
