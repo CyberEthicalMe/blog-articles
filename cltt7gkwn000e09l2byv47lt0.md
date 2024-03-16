@@ -16,7 +16,8 @@ tags: ethical-hacking, ctf-writeup
 > Note: The valuable data is stored under \\Documents\\Work
 
 **Type**: Forensics  
-**Difficulty**: Hard
+**Difficulty**: Hard  
+Event: [Hack The Box Cyber Apocalypse 2024: Hacker Royale](https://ctf.hackthebox.com/event/details/cyber-apocalypse-2024-hacker-royale-1386) ([ctftime](https://ctftime.org/event/2255))
 
 # Initial recon
 
@@ -33,15 +34,16 @@ d8cc0505f4a125bb24eaa0a955bc83800678a24570daefa3ab0936a9a095a1e3
 
 Before opening the file I'm marking the files as readonly and noting down its hash. File system contained in AD1 image can be browsed with a [FTK Imager](https://www.exterro.com/digital-forensics-software/ftk-imager).
 
-<details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>
-
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
+<details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
 
 From the challenge description we know that:
-- owner of the files was struck with a ransomware rendering the files unusable,
-- important files are located under \Documents\Work; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
-- objective: recover file
+
+* owner of the files was struck with a ransomware rendering the files unusable,
+    
+* important files are located under \\Documents\\Work; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
+    
+* objective: recover file
+    
 
 ## Retrieving encrypted files
 
@@ -231,3 +233,7 @@ string GetHashCode(string pass, string salt)
 Running the code against the encrypted XLSX file yields restored file. Because I don't want to deal with the potential malware in the XLSX file - I unzip the file and uses Visual Studio Code search functionality to grab the flag.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710538511891/c33662a1-9f84-4713-8886-8602a1385d69.png align="center")
+
+# Additional reading
+
+%%[follow-cta]
