@@ -35,15 +35,6 @@ Before opening the file I'm marking the files as readonly and noting down its ha
 
 <details data-node-type="hn-details-summary"><summary>Extension: *.ad1</summary><div data-type="detailsContent">AD1 (Access Data 1) is a disk image file used to hold file-level acquisitions. This format is exclusively used in the Forensic Toolkit by Accessdata.</div></details>![](https://cdn.hashnode.com/res/hashnode/image/upload/v1710528889702/6adc1238-9069-46bc-a1b2-66dc68c907d5.png align="center")
 
-From the challenge description we know that:
-
-* owner of the files was struck with a ransomware rendering the files unusable,
-    
-* important files are located under `\Documents\Work`; because this is Windows system I assume it's `%USERPROFILE%\Documents\Work`
-    
-* objective: recover file
-    
-
 ## Retrieving encrypted files
 
 Content of the important directory
