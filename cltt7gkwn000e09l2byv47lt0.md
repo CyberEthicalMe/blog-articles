@@ -17,7 +17,9 @@ tags: ethical-hacking, ctf-writeup
 
 **Type**: Forensics  
 **Difficulty**: Hard  
-Event: [Hack The Box Cyber Apocalypse 2024: Hacker Royale](https://ctf.hackthebox.com/event/details/cyber-apocalypse-2024-hacker-royale-1386) ([ctftime](https://ctftime.org/event/2255))
+**Event**: [Hack The Box Cyber Apocalypse 2024: Hacker Royale](https://ctf.hackthebox.com/event/details/cyber-apocalypse-2024-hacker-royale-1386) ([ctftime](https://ctftime.org/event/2255))
+
+%%[support-cta] 
 
 # Initial recon
 
@@ -236,4 +238,10 @@ Running the code against the encrypted XLSX file yields restored file. Because I
 
 # Additional reading
 
-%%[follow-cta]
+%%[follow-cta] 
+
+* [POOF write-up from HackTheBoo 2022 using volatility2](https://blog.cyberethical.me/hacktheboo-2022-htb-ctf-write-ups#heading-poof)
+    
+* [volatility3 pull request with the hibernation plugins by ForensicXlab](https://github.com/volatilityfoundation/volatility3/pull/1036)
+    
+* [Volatility3: Modern Windows Hibernation file analysis by ForensiXlab](https://www.forensicxlab.com/posts/hibernation/)
