@@ -15,9 +15,10 @@ cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1743030958560/b229451
 
 **Type**: Forensics  
 **Difficulty**: Medium  
-**Event**: [Hack The Box Cyber Apocalypse 2025: Tales From Eldoria](https://www.hackthebox.com/events/cyber-apocalypse-2025) ([ctftime](https://ctftime.org/event/2674/))
+**Event**: [Hack The Box Cyber Apocalypse 2025: Tales From Eldoria](https://www.hackthebox.com/events/cyber-apocalypse-2025) ([ctftime](https://ctftime.org/event/2674/))  
+**Author**: [thewildspirit](https://app.hackthebox.com/users/70891)
 
-Official write-up by thewildspirit:  
+Official write-up:  
 [https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/forensics/ToolPie](https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/forensics/ToolPie)
 
 %%[support-cta] 
@@ -175,7 +176,7 @@ And here is where the attacked made a mistake - in his encryption alghoritm used
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1743025644880/9a819878-e318-4637-91c9-c25f21c6576e.png align="center")
 
 ```python
-client.send((user+SEPARATOR+k).encode()) 
+client.send((user+SEPARATOR+k).encode())
 ```
 
 Inspecting TCP packets sent to C&C:
@@ -193,7 +194,7 @@ We have all the information needed to recover the file.
 <div data-node-type="callout-text">For automated approach I stronly suggest reading author’s <a target="_self" rel="noopener noreferrer nofollow" href="https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/forensics/ToolPie" style="pointer-events: none">write-up</a>.</div>
 </div>
 
-In `wireshark` **Analyze** \&gt; **Follow** … &gt; **TCP Stream**. Find stream with big chunks of data, select only communication to C&C, raw (important later) and save.
+In `wireshark` **Analyze** &gt; **Follow** … &gt; **TCP Stream**. Find stream with big chunks of data, select only communication to C&C, raw (important later) and save.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1743026129603/acf39e75-689d-44cc-902e-8c08c4b1bf89.png align="center")
 
@@ -240,7 +241,7 @@ Now, come back to the “Follow TCP Stream” window, ensure only traffic to C&C
 
 Notice that we have an unwated data at the beginning of the encrypted file. Content starts from `e1 4c fe a8` (see the content of packet 94 or 5th line in “Follow TCP Stream”). Now, to carve out the unncessary data, we have to remove that many bytes (`e1` starts after 69 bytes in hexadecimal base):
 
-$$(60+9)_{(16)} = 105_{(10)}$$
+$$(60+9){(16)} = 105{(10)}$$
 
 ```diff
 $ dd skip=105 bs=4096 iflag=skip_bytes if=raw.enc of=rawdata.enc
