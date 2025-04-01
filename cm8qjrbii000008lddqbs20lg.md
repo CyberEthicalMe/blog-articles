@@ -6,6 +6,7 @@ datePublished: Wed Mar 26 2025 23:19:36 GMT+0000 (Coordinated Universal Time)
 cuid: cm8qjrbii000008lddqbs20lg
 slug: htb-ctf-2025-forensics-toolpie
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1743030958560/b229451f-fe21-4f0f-a63b-0a9864e059a4.png
+tags: python, hacking, cybersecurity-1, hack-the-box
 
 ---
 
