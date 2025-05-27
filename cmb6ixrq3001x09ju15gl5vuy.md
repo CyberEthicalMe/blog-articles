@@ -15,10 +15,10 @@ tags: ctf, hackthebox, htb, volatility, ctf-writeup, rootkits
 **Type**: Forensics  
 **Difficulty**: Hard  
 **Authors**: [c4n0pus](https://www.hackthebox.com/blog/author/Odysseus%20\(c4n0pus\))  
-**Event**: [Global Cyber Skills Benchmark CTF 2025: Operation Blackout](https://www.hackthebox.com/events/global-cyber-skills-benchmark-2025) (**ctftime**)
+**Event**: [Global Cyber Skills Benchmark CTF 2025: Operation Blackout](https://www.hackthebox.com/events/global-cyber-skills-benchmark-2025) ([**ctftime**](https://ctftime.org/event/2707))
 
 Official write-up:  
-TBA
+TBA (*but probably* [*here*](https://github.com/hackthebox/business-ctf-2025))
 
 # Lessons learned/Topics:
 
